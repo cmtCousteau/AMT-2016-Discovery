@@ -1,6 +1,6 @@
 FROM jboss/wildfly:10.1.0.Final
 
-ADD LandingPageMVCApp-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
+ADD LandingPageApp-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
 
 MAINTAINER Olivier Liechti <olivier.liechti@heig-vd.ch>
 
