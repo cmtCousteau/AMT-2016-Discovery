@@ -1,6 +1,6 @@
 FROM jboss/wildfly:10.1.0.Final
 
-ADD packages/LandingPageApp-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
+ADD packages/AMT_labo1_webApp-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
 
 MAINTAINER Olivier Liechti <olivier.liechti@heig-vd.ch>
 
