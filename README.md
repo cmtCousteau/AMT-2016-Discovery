@@ -1,8 +1,5 @@
 # AMT Discovery 2016
 
-## Objectives
-
-
 ## How to use
 
 First step you need to download the project. Next you must have docker and docker-compose installed.
