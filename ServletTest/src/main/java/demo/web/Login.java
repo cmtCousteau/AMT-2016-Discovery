@@ -36,25 +36,12 @@ public class Login extends HttpServlet {
         
         User userTmp = UsersManager.findUser(userName);
 
+        // Si l'utilisateur arrive à se logger on ouvre une session.
         if(userTmp.getPassword().equals(password)){
             
             // Création de la session.
-            request.getSession().setAttribute("userName", userName);
-            
-            
-            response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet NewServlet</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>LOGIN OK</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            }
+            request.getSession().setAttribute("user", userTmp);
+            request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
         }
         else{
          response.setContentType("text/html;charset=UTF-8");
