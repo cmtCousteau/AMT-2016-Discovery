@@ -5,10 +5,6 @@
         <servlet-class>demo.web.HelloServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RegisterAccount</servlet-name>
-        <servlet-class>demo.web.RegisterAccount</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CreateAccount</servlet-name>
         <servlet-class>demo.web.CreateAccount</servlet-class>
     </servlet>
@@ -19,10 +15,6 @@
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/Hello</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterAccount</servlet-name>
-        <url-pattern>/RegisterAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateAccount</servlet-name>

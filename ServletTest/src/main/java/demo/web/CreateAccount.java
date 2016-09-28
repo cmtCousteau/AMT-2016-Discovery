@@ -20,14 +20,28 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CreateAccount extends HttpServlet {
     
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+    }
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         String userName = request.getParameter("userName");
-        String password = request.getParameter("password");  
-        UsersManager.addUser(new User(userName, password));
+        String password = request.getParameter("password");
+        
+        User userTmp = UsersManager.findUser(userName);
+        if(userTmp != null){
+            request.setAttribute(("error"), "Error, username already used !");
+        }
+        else{
+            UsersManager.addUser(new User(userName, password));
+            request.setAttribute(("error"), "");
+        }
+        
         request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }
 

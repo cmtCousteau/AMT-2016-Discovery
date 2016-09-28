@@ -32,16 +32,11 @@ public class Login extends HttpServlet {
         boolean userLoginOk = false;
         String userName = request.getParameter("userName");
         String password = request.getParameter("password"); 
+      
         
-        for (Iterator it = UsersManager.getUsersList().iterator(); it.hasNext();) {
-            User user = (User) it.next();
-            
-            if(user.getUserName().equals(userName)  && user.getPassword().equals(password)){
-                userLoginOk = true;
-                break;
-            }
-        }
-        if(userLoginOk){
+        User userTmp = UsersManager.findUser(userName);
+
+        if(userTmp.getPassword().equals(password)){
             
             // Création de la session.
             request.getSession().setAttribute("userName", userName);

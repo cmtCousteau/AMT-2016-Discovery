@@ -6,8 +6,8 @@
 package demo.services;
 
 import demo.model.User;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -16,20 +16,17 @@ import java.util.List;
 public final class UsersManager {
     
     // faire une map
-    private static List userList = new ArrayList();
+    //private static List userList = new MapList();
+    private static Map<String, User> userList = new HashMap<>();
     
     public static void addUser(User user){
-        userList.add(user);
+        userList.put(user.getUserName(), user);
     }
     public static void removeUser(User user){
         userList.remove(user);
     }
-    
-    public static List getUsersList(){
-        List userListToReturn;
-        
-        userListToReturn = userList;
-        return userListToReturn;
+
+    public static User findUser(String userName){
+        return userList.get(userName);
     }
-    
 }

@@ -1,6 +1,6 @@
 <%-- 
     Document   : CreateAccount
-    Created on : Sep 27, 2016, 2:22:22 PM
+    Created on : Sep 27, 2016, 1:39:39 PM
     Author     : marco
 --%>
 
@@ -8,13 +8,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Redirection en HTML</title>
-
-        <meta http-equiv="refresh" content="3; URL=index.html">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Register account</title>
     </head>
-
     <body>
-        <p> Register successfull. You will be redirect to the main page. </p>
-    </body>
+        <form method="post" action="CreateAccount">
+            <p>
+                <label for="userName">User name :</label>
+                <input type="text" name="userName" id="userName" />
 
+                <br />
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" />
+
+                <input type="submit" value="Submit"/>
+
+            </p>
+        </form>
+    </body>
 </html>

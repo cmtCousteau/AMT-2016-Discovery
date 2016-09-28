@@ -56,10 +56,10 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        if(UsersManager.getUsersList().size()> 0){
-            User user = (User) UsersManager.getUsersList().get(0);
-            request.setAttribute(("student"), user);
-        }
+      //  if(UsersManager.getUsersList().size()> 0){
+           // User user = (User) UsersManager.getUsersList().get(0);
+            //request.setAttribute(("student"), user);
+       // }
         request.getRequestDispatcher("WEB-INF/pages/home.jsp").forward(request, response);
     }
 
