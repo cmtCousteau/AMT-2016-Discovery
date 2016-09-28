@@ -41,23 +41,13 @@ public class Login extends HttpServlet {
             
             // Création de la session.
             request.getSession().setAttribute("user", userTmp);
-            request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
+            
         }
         else{
-         response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet NewServlet</title>");            
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>LOGIN FAIL</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            }    
+             request.getSession().setAttribute("error", "username/password is wrong");
         }
+        
+        request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
     }
 
 }
