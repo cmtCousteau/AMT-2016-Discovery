@@ -20,6 +20,9 @@
     <!-- Zetta Menu CSS -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/zetta.menu.css"
     />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css"
+    />
     <!-- /Zetta Menu CSS -->
 </head>
 
@@ -55,26 +58,27 @@
     </ul>
 </nav>
 <!-- /Zetta Menu -->
+<div class="container">
+    <form method="post" action="Login">
+        <p>
+            <label for="userName">userName :</label>
+            <input type="text" name="userName" id="userName"/>
 
-<form method="post" action="Login">
-    <p>
-        <label for="userName">userName :</label>
-        <input type="text" name="userName" id="userName"/>
+            <br/>
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password"/>
 
-        <br/>
-        <label for="password">Password :</label>
-        <input type="password" name="password" id="password"/>
-
-        <input type="submit" value="Login"/>
+            <input type="submit" value="Login"/>
 
 
-    </p>
-</form>
-<form method="get" action="RegisterAccount.html">
-    <p>
-        <input type="submit" value="Enregistrer"/>
-    </p>
-</form>
+        </p>
+    </form>
+    <form method="get" action="CreateAccount.html">
+        <p>
+            <input type="submit" value="Enregistrer"/>
+        </p>
+    </form>
+</div>
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
