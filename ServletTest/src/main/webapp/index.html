@@ -26,6 +26,8 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css"
     />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/custom.css"
+    />
     <!-- /Zetta Menu CSS -->
 </head>
 
@@ -62,25 +64,25 @@
 </nav>
 <!-- /Zetta Menu -->
 <div class="container">
-    <form method="post" action="Login">
-        <p>
-            <label for="userName">userName :</label>
-            <input type="text" name="userName" id="userName"/>
+    <div class="login-card">
+        <div class="login-top">
+            <h1>Login</h1>
+        </div>
+        <div class="login-bot">
+            <form>
+                <input type="text" name="user" placeholder="Username">
+                <input type="password" name="pass" placeholder="Password">
+                <input type="submit" name="login" class="login login-submit" value="login">
+                <p>
+                    <input type="submit" class="login login-submit" value="Enregistrer"/>
+                </p>
+            </form>
 
-            <br/>
-            <label for="password">Password :</label>
-            <input type="password" name="password" id="password"/>
-
-            <input type="submit" value="Login"/>
-
-
-        </p>
-    </form>
-    <form method="get" action="CreateAccount.html">
-        <p>
-            <input type="submit" value="Enregistrer"/>
-        </p>
-    </form>
+            <div class="login-help">
+                <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery -->
