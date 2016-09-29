@@ -41,13 +41,15 @@ public class Login extends HttpServlet {
             
             // Création de la session.
             request.getSession().setAttribute("user", userTmp);
+            request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
             
         }
         else{
              request.getSession().setAttribute("error", "username/password is wrong");
+             request.getRequestDispatcher("WEB-INF/pages/index.html").forward(request, response);
         }
         
-        request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
+        
     }
 
 }
