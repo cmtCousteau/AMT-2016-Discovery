@@ -14,11 +14,11 @@
     </servlet>
     <servlet>
         <servlet-name>CreateAccount</servlet-name>
-        <servlet-class>demo.web.CreateAccount</servlet-class>
+        <servlet-class>demo.web.CreateAccountServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>demo.web.Login</servlet-class>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>demo.web.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
@@ -29,7 +29,7 @@
         <url-pattern>/CreateAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Login</servlet-name>
+        <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <session-config>

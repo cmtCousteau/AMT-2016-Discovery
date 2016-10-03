@@ -8,8 +8,6 @@ package demo.web;
 import demo.model.User;
 import demo.services.UsersManager;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Iterator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author marco
  */
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
