@@ -22,6 +22,8 @@
                 <input type="password" name="password" id="password" />
 
                 <input type="submit" value="Submit"/>
+                <br />
+                <a href="index.html"> return </a>
             </p>
         </form>
     </body>
