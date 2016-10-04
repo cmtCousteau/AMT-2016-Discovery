@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,24 +64,12 @@
             <h1>Login</h1>
         </div>
         <div class="login-bot">
+
+            <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Warning!</strong> Better check yourself, you're not looking too good.
+            </div>
             <form method="post" action="Login">
-
-                <c:choose>
-                    <c:when test="${requestScope.error != null}">
-                        pizza.
-                        <br />
-                    </c:when>
-                    <c:otherwise>
-                        pizzas.
-                        <br />
-                    </c:otherwise>
-                </c:choose>
-
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-                </div>
-
                 <input type="text" name="userName" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="login" class="login login-submit" value="login">
@@ -98,7 +87,6 @@
 
 <!-- jQuery -->
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.js"></script>
 <!-- /jQuery -->
 <!-- Zetta JS -->
 <script type="text/javascript" src="assets/js/zetta.menu.jquery.js"></script>
