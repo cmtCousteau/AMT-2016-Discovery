@@ -7,21 +7,9 @@
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Zetta Menu generated in Z Menu Maker</title>
+    <title>Create account</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/font-awesome.min.css"
-    />
-    <!-- /Font Awesome -->
-    <!-- Zetta Menu CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/zetta.menu.css"
-    />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css"
-    />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/custom.css"
-    />
+    <jsp:include page="includes/head.jsp" />
     <!-- /Zetta Menu CSS -->
 </head>
 
@@ -37,8 +25,18 @@
         </li>
         <li class=" zm-active"><a href="#">Home</a>
         </li>
-        <li><a href="#">My Account</a>
-        </li>
+        <c:if test="${sessionScope.user.userName != null}">
+            <li class=" zm-right-item><a href="#">My Account</a>
+            </li>
+        </c:if>
+        <c:if test="${sessionScope.user.userName == null}">
+            <li class=" zm-right-item"><a href="Login">login</a>
+            </li>
+            <li class=" zm-right-item"><a href="CreateAccount">Create Account</a>
+            </li>
+        </c:if>
+
+
         <li class=" zm-right-item zm-search"><a><i class="zm-icon fa fa-search"></i></a>
             <div>
                 <form action="">
@@ -60,27 +58,19 @@
 <div class="container">
     <div class="login-card">
         <div class="login-top">
-            <h1>CreateAccount</h1>
+            <h1>Create Account</h1>
         </div>
         <div class="login-bot">
             <form method="post" action="CreateAccount">
                 <p>
-                    <label for="userName">User name :</label>
-                    <input type="text" name="userName" id="userName" />
-
-                    <br />
-                    <label for="password">Password :</label>
-                    <input type="password" name="password" id="password" />
+                    <input type="text" name="userName" placeholder="username" id="userName" />
+                    <input type="password" name="password" placeholder="Password" id="password" />
 
                     <input type="submit" class="login login-submit" value="Submit"/>
                     <br />
-                    <a href="index.html"> return </a>
+                    <a href="#"> return </a>
                 </p>
             </form>
-
-            <div class="login-help">
-                <a href="index.html">Forgot Password</a>
-            </div>
         </div>
     </div>
 </div>

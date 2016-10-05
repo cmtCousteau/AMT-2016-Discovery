@@ -1,12 +1,3 @@
-<%--
-    Document   : CreateAccount
-    Created on : Sep 27, 2016, 1:39:39 PM
-    Author     : marco
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!-- Zetta Menu -->
 <nav class="zetta-menu1 zm-css">
     <input type="checkbox" id="zm-switchzetta-menu1"/>
     <ul onclick="">

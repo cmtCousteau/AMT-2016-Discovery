@@ -8,21 +8,8 @@
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Zetta Menu generated in Z Menu Maker</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/font-awesome.min.css"
-    />
-    <!-- /Font Awesome -->
-    <!-- Zetta Menu CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/zetta.menu.css"
-    />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/bootstrap.css"
-    />
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/custom.css"
-    />
+    <title>Login</title>
+    <jsp:include page="includes/head.jsp" />
     <!-- /Zetta Menu CSS -->
 </head>
 
