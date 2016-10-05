@@ -36,5 +36,17 @@ public class UsersManagerServlet extends HttpServlet {
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/usersManager.jsp").forward(request, response);;
     }
-
+    
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        String userName = request.getParameter("userName");
+        
+        if(userName != null){
+            if(usersManager.userExist(userName))
+                usersManager.removeUser(usersManager.findUser(userName));            
+        }
+        request.getRequestDispatcher("WEB-INF/pages/usersManager.jsp").forward(request, response);
+    }
 }
