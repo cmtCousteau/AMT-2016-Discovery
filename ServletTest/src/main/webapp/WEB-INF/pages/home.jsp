@@ -14,6 +14,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>${requestScope.student}</h1>
+        <h1>Bienvenue</h1>
     </body>
 </html>

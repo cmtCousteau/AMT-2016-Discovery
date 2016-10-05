@@ -22,6 +22,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+            request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
     }
 
     @Override
@@ -33,7 +34,6 @@ public class LoginServlet extends HttpServlet {
       
         
         User userTmp = UsersManager.findUser(userName);
-
         // Si l'utilisateur arrive à se logger on ouvre une session.
         if(userTmp.getPassword().equals(password)){
             
@@ -43,8 +43,9 @@ public class LoginServlet extends HttpServlet {
             
         }
         else{
+             request.setAttribute("error", "username/password is wrong");
              request.getSession().setAttribute("error", "username/password is wrong");
-             request.getRequestDispatcher("WEB-INF/pages/index.html").forward(request, response);
+             request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
         }
         
         

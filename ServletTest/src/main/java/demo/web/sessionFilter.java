@@ -42,7 +42,7 @@ public class sessionFilter implements Filter {
         }
         
         if(((HttpServletRequest)request).getSession().getAttribute("user") == null){
-          ((HttpServletResponse)response).sendRedirect("/index.html");
+          ((HttpServletResponse)response).sendRedirect("/index.jsp");
         }
         else{
             //request.getRequestDispatcher("WEB-INF/pages/Welcome.jps").forward(request, response);

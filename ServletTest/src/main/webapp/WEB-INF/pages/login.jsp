@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +38,18 @@
         </li>
         <li class=" zm-active"><a href="#">Home</a>
         </li>
-        <li><a href="#">My Account</a>
-        </li>
+        <c:if test="${sessionScope.user.userName != null}">
+            <li class=" zm-right-item><a href="#">My Account</a>
+            </li>
+        </c:if>
+        <c:if test="${sessionScope.user.userName == null}">
+            <li class=" zm-right-item"><a href="Login">login</a>
+            </li>
+            <li class=" zm-right-item"><a href="CreateAccount">Create Account</a>
+            </li>
+        </c:if>
+
+
         <li class=" zm-right-item zm-search"><a><i class="zm-icon fa fa-search"></i></a>
             <div>
                 <form action="">
@@ -63,42 +74,39 @@
             <h1>Login</h1>
         </div>
         <div class="login-bot">
+
+            <c:choose>
+                <c:when test="${error == null}">
+                </c:when>
+                <c:otherwise>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Warning!</strong> ${error}
+                    </div>
+                </c:otherwise>
+            </c:choose>
+
+
+
             <form method="post" action="Login">
-
-                <c:choose>
-                    <c:when test="${requestScope.error != null}">
-                        pizza.
-                        <br />
-                    </c:when>
-                    <c:otherwise>
-                        pizzas.
-                        <br />
-                    </c:otherwise>
-                </c:choose>
-
-                <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
-                </div>
-
                 <input type="text" name="userName" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
                 <input type="submit" name="login" class="login login-submit" value="login">
             </form>
+
             <form method="post" action="CreateAccount">
                 <input type="submit" class="login login-submit" value="Register"/>
             </form>
 
             <div class="login-help">
-                <a href="index.html">Forgot Password</a>
+                <a href="#">Forgot Password</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- jQuery -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.js"></script>
+<script src="../../assets/js/jquery.min.js"></script>
 <!-- /jQuery -->
 <!-- Zetta JS -->
 <script type="text/javascript" src="assets/js/zetta.menu.jquery.js"></script>
