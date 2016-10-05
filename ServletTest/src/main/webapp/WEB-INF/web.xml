@@ -20,6 +20,10 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>demo.web.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UsersManagerServlet</servlet-name>
+        <servlet-class>demo.web.UsersManagerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/Hello</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsersManagerServlet</servlet-name>
+        <url-pattern>/usersManager</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -6,27 +6,61 @@
 package demo.services;
 
 import demo.model.User;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.ejb.Singleton;
 
 /**
  *
  * @author marco
  */
-public final class UsersManager {
+
+@Singleton
+public class UsersManager {
     
     // faire une map
     //private static List userList = new MapList();
-    private static Map<String, User> userList = new HashMap<>();
+    private Map<String, User> userList = new HashMap<>();
     
-    public static void addUser(User user){
+    public void addUser(User user){
         userList.put(user.getUserName(), user);
     }
-    public static void removeUser(User user){
+    public void removeUser(User user){
         userList.remove(user);
     }
 
-    public static User findUser(String userName){
+    public User findUser(String userName){
         return userList.get(userName);
     }
+    
+    public boolean addUser(String userName, String password){
+    
+        if(!userExist(userName)){
+            addUser(new User(userName, password));
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean userExist(String userName){
+        
+        if(findUser(userName) == null)
+            return false;
+        else
+            return true;
+    }
+    
+    public boolean passwordMatch(String userName, String password){
+        if(userExist(userName)){
+            if(findUser(userName).getPassword().equals(password))
+                return true;
+        }
+        return false;
+    }
+    
+    public Collection <User> getUsersListArray(){
+        return userList.values();
+    }
+    
 }
