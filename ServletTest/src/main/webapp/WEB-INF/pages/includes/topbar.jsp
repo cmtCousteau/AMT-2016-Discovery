@@ -9,6 +9,8 @@
     </li>
     <li class=" zm-active"><a href="index.jsp">Home</a>
     </li>
+    <li class=" zm"><a href="usersManager">User manager</a>
+    </li>
     <c:if test="${sessionScope.user.userName != null}">
         <li class=" zm-right-item><a href="#">My Account</a>
         </li>

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c9d211b-a298-4ad2-b580-e774735e93ce" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/usersManager.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" />
     </list>
     <ignored path="AMT-2016-Discovery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,32 +29,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="694">
-              <caret line="5993" column="2" selection-start-line="5993" selection-start-column="2" selection-end-line="5993" selection-end-column="62" />
+            <state relative-caret-position="231">
+              <caret line="2318" column="28" selection-start-line="2318" selection-start-column="26" selection-end-line="2318" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateAccount.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp">
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="619">
+              <caret line="145" column="29" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/home.jsp">
+      <file leaf-file-name="usersManager.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/usersManager.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            <state relative-caret-position="600">
+              <caret line="41" column="101" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="101" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/services/UsersManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#1534#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#756#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,8 +86,8 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="18" column="46" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="46" />
+            <state relative-caret-position="360">
+              <caret line="34" column="58" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -67,39 +96,21 @@
       <file leaf-file-name="topbar.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="7" column="12" selection-start-line="5" selection-start-column="7" selection-end-line="7" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="UsersManagerServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/web/UsersManagerServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/head.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#1741#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,6 +121,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -124,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/index.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/index.jsp" />
@@ -134,8 +144,13 @@
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/head.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/users.html" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/users.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/usersManager.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" />
       </list>
     </option>
   </component>
@@ -379,15 +394,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,6 +419,120 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AMT-2016-Discovery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServletTest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -430,6 +551,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -956,12 +1078,12 @@
       <workItem from="1475063229858" duration="5642000" />
       <workItem from="1475501256676" duration="3006000" />
       <workItem from="1475508537959" duration="2306000" />
-      <workItem from="1475666174016" duration="4690000" />
+      <workItem from="1475666174016" duration="11580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15644000" />
+    <option name="totallyTimeSpent" value="22534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="875" extended-state="6" />
@@ -1064,7 +1186,7 @@
         <state relative-caret-position="585">
           <caret line="45" column="53" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="53" />
           <folding>
-            <element signature="e#0#1837#0" expanded="true" />
+            <element signature="e#0#1973#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1130,7 +1252,7 @@
         <state relative-caret-position="525">
           <caret line="45" column="53" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="53" />
           <folding>
-            <element signature="e#0#1837#0" expanded="true" />
+            <element signature="e#0#1973#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1215,26 +1337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/welcome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1270,24 +1376,8 @@
         <state relative-caret-position="658">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1837#0" expanded="true" />
+            <element signature="e#0#1973#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="694">
-          <caret line="5993" column="2" selection-start-line="5993" selection-start-column="2" selection-end-line="5993" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1299,18 +1389,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/welcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="360">
+          <caret line="34" column="58" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/web/UsersManagerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#1741#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" selection-start-line="5" selection-start-column="7" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/services/UsersManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/zetta.menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="532" column="21" selection-start-line="532" selection-start-column="15" selection-end-line="532" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        <state relative-caret-position="289">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/usersManager.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="41" column="101" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="145" column="29" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="2318" column="28" selection-start-line="2318" selection-start-column="26" selection-end-line="2318" selection-end-column="28" />
           <folding />
         </state>
       </provider>

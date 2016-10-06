@@ -27,12 +27,10 @@
         <div class="login-bot">
             <form method="post" action="CreateAccount">
                 <p>
-                    <input type="text" name="userName" placeholder="username" id="userName" />
+                    <input type="text" name="userName" placeholder="Username" id="userName" />
                     <input type="password" name="password" placeholder="Password" id="password" />
 
                     <input type="submit" class="login login-submit" value="Submit"/>
-                    <br />
-                    <a href="#"> return </a>
                 </p>
             </form>
         </div>
