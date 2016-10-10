@@ -44,14 +44,16 @@ public class LoginServlet extends HttpServlet {
             if(usersManager.passwordMatch(userName, password)){
                 // Création de la session.
                 request.getSession().setAttribute("user", usersManager.findUser(userName));
-                request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
             }
             else{
                  request.setAttribute("error", "username/password is wrong");
-                 request.getSession().setAttribute("error", "username/password is wrong");
-                 request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
+                 
             }
         }
+        else{
+             request.setAttribute("error", "user doesn't exist !");
+        }
+        request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
     }
 
 }
