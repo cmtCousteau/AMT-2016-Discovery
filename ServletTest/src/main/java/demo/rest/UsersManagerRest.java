@@ -8,9 +8,11 @@ package demo.rest;
 import demo.dto.UserDTO;
 import demo.model.User;
 import demo.services.UsersManager;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.ejb.Stateless;
@@ -25,17 +27,22 @@ import javax.ws.rs.core.MediaType;
  */
 @Stateless
 @Path("/usersManagerTest")
-public class usersManagerRest {
+public class UsersManagerRest {
     
     @EJB
     private UsersManager usersManager;
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getUsers(){
+    public Collection <UserDTO> getUsers(){
         
-        List<User> users = (List<User>) usersManager.getUsersListArray();
-        return users;
+        Collection <UserDTO> userListDTO = new ArrayList();
+        
+        for(User u : usersManager.getUsersListArray()){
+            userListDTO.add(toDTO(u));
+        }
+
+        return userListDTO;
 
     }
     
