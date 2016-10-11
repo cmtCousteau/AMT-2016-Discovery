@@ -42,7 +42,11 @@ public class CreateAccountServlet extends HttpServlet {
         //User userTmp = UsersManager.findUser(userName);
         if(!usersManager.addUser(userName, password)){
             request.setAttribute(("error"), "Error, username already used !");
-        }      
+        }
+        else
+        {
+            request.setAttribute(("OK"), "La creation de compte c'est bien effectuée");
+        }
         request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }
 

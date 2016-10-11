@@ -9,16 +9,16 @@
     </li>
     <li class=" zm-active"><a href="index.jsp">Home</a>
     </li>
-    <li class=" zm"><a href="usersManager">User manager</a>
+    <li class=" zm hvr-fade"><a href="usersManager">User manager</a>
     </li>
     <c:if test="${sessionScope.user.userName != null}">
-        <li class=" zm-right-item><a href="#">My Account</a>
+        <li class=" zm-right-item hvr-fade><a href="#">My Account</a>
         </li>
     </c:if>
     <c:if test="${sessionScope.user.userName == null}">
-        <li class=" zm-right-item"><a href="Login">login</a>
+        <li class=" zm-right-item hvr-fade"><a href="Login">login</a>
         </li>
-        <li class=" zm-right-item"><a href="CreateAccount">Create Account</a>
+        <li class=" zm-right-item hvr-fade"><a href="CreateAccount">Create Account</a>
         </li>
     </c:if>
 

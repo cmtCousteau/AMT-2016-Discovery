@@ -85,7 +85,7 @@
 *
 */
 .zetta-menu1 {
-  background: #354a5f;
+  background: #353535;
   padding: 0;
   margin: 0;
 }
@@ -117,7 +117,7 @@
   text-align: center;
 }
 .zetta-menu1 > ul > li:hover {
-  background-color: #3598dc;
+  background-color: #b45849;
 }
 .zetta-menu1 > ul > li:hover > a,
 .zetta-menu1 > ul > li:hover > a:visited {
@@ -126,7 +126,7 @@
 }
 .zetta-menu1 > ul > li.zm-active,
 .zetta-menu1 > ul > li.zm-open {
-  background-color: #3598dc;
+  background-color: #b45849;
 }
 .zetta-menu1 > ul > li.zm-img {
   font-size: 0;

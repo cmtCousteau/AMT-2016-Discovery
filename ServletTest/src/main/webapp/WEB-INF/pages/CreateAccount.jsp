@@ -25,6 +25,21 @@
             <h1>Create Account</h1>
         </div>
         <div class="login-bot">
+
+                <c:if test="${error == null && OK != null}">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Well done!</strong> ${OK}
+                    </div>
+                </c:if>
+                <c:if test="${error != null && OK == null}">
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Warning!</strong> ${error}
+                    </div>
+                </c:if>
+
+
             <form method="post" action="CreateAccount">
                 <p>
                     <input type="text" name="userName" placeholder="Username" id="userName" />
