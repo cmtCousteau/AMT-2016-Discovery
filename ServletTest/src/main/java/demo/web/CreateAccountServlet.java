@@ -35,17 +35,24 @@ public class CreateAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
-        
         //User userTmp = UsersManager.findUser(userName);
-        if(!usersManager.addUser(userName, password)){
-            request.setAttribute(("error"), "Error, username already used !");
-        }
-        else
+        if(userName == null || password == null)
         {
-            request.setAttribute(("OK"), "La creation de compte c'est bien effectuée");
+            request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+        }
+        if(userName.length() < 5 || password.length() < 5)
+        {
+            request.setAttribute(("error"), "UserName ou password top court");
+            request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+        }
+        else {
+            if (!usersManager.addUser(userName, password)) {
+                request.setAttribute(("error"), "Error, username already used !");
+            } else {
+                request.setAttribute(("OK"), "La creation de compte c'est bien effectuée");
+            }
         }
         request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }

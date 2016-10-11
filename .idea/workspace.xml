@@ -5,12 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java" afterPath="$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/head.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/head.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/zetta.menu.css" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/zetta.menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp" afterPath="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp" />
     </list>
     <ignored path="AMT-2016-Discovery.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,14 +57,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CreateAccountServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CreateAccountServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="47" column="84" selection-start-line="47" selection-start-column="84" selection-end-line="47" selection-end-column="84" />
+            <state relative-caret-position="418">
+              <caret line="42" column="103" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <marker date="1476196965591" expanded="true" signature="1063:1631" ph="{...}" />
+                <element signature="e#0#2084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,8 +72,8 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="23" selection-start-line="28" selection-start-column="11" selection-end-line="37" selection-end-column="23" />
+            <state relative-caret-position="450">
+              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -88,8 +82,8 @@
       <file leaf-file-name="CreateAccount.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="199">
+              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -115,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hover.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hover.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/hover.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
@@ -153,21 +147,21 @@
         <option value="$PROJECT_DIR$/ServletTest/src/main/java/demo/web/LoginServlet.java" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/users.html" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/users.jsp" />
-        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/usersManager.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/zetta.menu.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/jquery.gridder.min.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/plugins/gridder-master/dist/css/jquery.gridder.min.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/demo.css" />
-        <option value="$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java" />
-        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/animate.css" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/head.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/includes/topbar.jsp" />
         <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/hover.css" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp" />
+        <option value="$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java" />
       </list>
     </option>
   </component>
@@ -1100,12 +1094,12 @@
       <workItem from="1476102876489" duration="1951000" />
       <workItem from="1476116128455" duration="4419000" />
       <workItem from="1476174839256" duration="10897000" />
-      <workItem from="1476193343260" duration="3609000" />
+      <workItem from="1476193343260" duration="6290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45338000" />
+    <option name="totallyTimeSpent" value="48019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1602" height="875" extended-state="6" />
@@ -1514,41 +1508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="47" column="84" selection-start-line="47" selection-start-column="84" selection-end-line="47" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1476196965591" expanded="true" signature="1063:1631" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="23" selection-start-line="28" selection-start-column="11" selection-end-line="37" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="304" column="29" selection-start-line="304" selection-start-column="29" selection-end-line="304" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/animate.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -1586,6 +1545,40 @@
         <state relative-caret-position="396">
           <caret line="1387" column="36" selection-start-line="1387" selection-start-column="36" selection-end-line="1387" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="304" column="29" selection-start-line="304" selection-start-column="29" selection-end-line="304" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/webapp/WEB-INF/pages/CreateAccount.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ServletTest/src/main/java/demo/web/CreateAccountServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="42" column="103" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#2084#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

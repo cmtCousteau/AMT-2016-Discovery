@@ -45,7 +45,7 @@
                     <input type="text" name="userName" placeholder="Username" id="userName" />
                     <input type="password" name="password" placeholder="Password" id="password" />
 
-                    <input type="submit" class="login login-submit" value="Submit"/>
+                    <input type="submit" class="login login-submit hvr-icon-float" value="Submit"/>
                 </p>
             </form>
         </div>

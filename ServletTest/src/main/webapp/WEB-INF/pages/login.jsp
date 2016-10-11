@@ -42,11 +42,12 @@
             <form method="post" action="Login">
                 <input type="text" name="userName" placeholder="Username">
                 <input type="password" name="password" placeholder="Password">
-                <input type="submit" name="login" class="login login-submit" value="login">
+                <input type="submit" name="login" class="login login-submit hvr-icon-float" value="login">
             </form>
 
+            <!-- TODO redirection sur CreateAccount -->
             <form method="post" action="CreateAccount">
-                <input type="submit" class="login login-submit" value="Register"/>
+                <input type="submit" class="login login-submit hvr-icon-float" value="Register"/>
             </form>
 
             <div class="login-help">
