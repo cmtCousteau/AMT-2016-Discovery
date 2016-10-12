@@ -12,7 +12,7 @@
     <li class=" zm hvr-fade"><a href="usersManager">User manager</a>
     </li>
     <c:if test="${sessionScope.user.userName != null}">
-        <li class=" zm-right-item hvr-fade><a href="#">My Account</a>
+        <li class=" zm-right-item hvr-fade"><a href="#">MyAccount</a>
         </li>
     </c:if>
     <c:if test="${sessionScope.user.userName == null}">
