@@ -38,15 +38,15 @@ public class CreateAccountServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         //User userTmp = UsersManager.findUser(userName);
-        if(userName == null || password == null)
-        {
-            request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
-        }
         if(userName.length() < 5 || password.length() < 5)
         {
             request.setAttribute(("error"), "UserName ou password top court");
             request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
+        /*if(userName == null || password == null)
+        {
+            request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+        }*/
         else {
             if (!usersManager.addUser(userName, password)) {
                 request.setAttribute(("error"), "Error, username already used !");
