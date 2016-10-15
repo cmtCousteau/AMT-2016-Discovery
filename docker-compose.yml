@@ -18,4 +18,4 @@ services:
   ports:
   - "6060:80"
   links:
-  - mysql
+  - mysql:db

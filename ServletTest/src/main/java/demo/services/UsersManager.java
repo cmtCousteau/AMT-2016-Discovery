@@ -5,6 +5,7 @@
  */
 package demo.services;
 
+import demo.dto.UserDTO;
 import demo.model.User;
 import java.util.Collection;
 import java.util.HashMap;
@@ -22,12 +23,16 @@ public class UsersManager {
     // faire une map
     //private static List userList = new MapList();
     private Map<String, User> userList = new HashMap<>();
-    
+        
     public void addUser(User user){
         userList.put(user.getUserName(), user);
     }
     public void removeUser(User user){
         userList.remove(user);
+    }
+    
+    public void removeUser(String userName){
+        userList.remove(userName);
     }
 
     public User findUser(String userName){
