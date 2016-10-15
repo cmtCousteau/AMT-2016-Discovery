@@ -7,10 +7,15 @@ package demo.services;
 
 import demo.dto.UserDTO;
 import demo.model.User;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import javax.annotation.Resource;
 import javax.ejb.Singleton;
+import javax.sql.DataSource;
 
 /**
  *
@@ -19,6 +24,11 @@ import javax.ejb.Singleton;
 
 @Singleton
 public class UsersManager {
+    
+    
+    @Resource(lookup = "java:/jdbc/sakila")
+    private DataSource dataSource;
+    
     
     // faire une map
     //private static List userList = new MapList();
@@ -36,6 +46,17 @@ public class UsersManager {
     }
 
     public User findUser(String userName){
+        try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = " + userName);
+            ResultSet rs = pstmt.executeQuery();
+            
+        
+        }
+        catch(Exception e){
+            
+        }
+        
         return userList.get(userName);
     }
     
