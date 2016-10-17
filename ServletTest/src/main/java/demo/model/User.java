@@ -10,9 +10,12 @@ package demo.model;
  * @author marco
  */
 public class User {
-    
+
+    private String name;
+    private String surname;
     private String userName;
     private String password;
+    private String Email;
 
     public void setUserName(String userName) {
         this.userName = userName;
