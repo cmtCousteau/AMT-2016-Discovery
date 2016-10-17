@@ -76,9 +76,6 @@ public class UsersManagerRest {
             return Response.status(418).build();
         }
         
-        
-        
-  
     }
     
     @Path("{userName}")
