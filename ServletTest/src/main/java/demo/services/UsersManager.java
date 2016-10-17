@@ -34,14 +34,63 @@ public class UsersManager {
     //private static List userList = new MapList();
     private Map<String, User> userList = new HashMap<>();
         
-    public void addUser(User user){
-        userList.put(user.getUserName(), user);
+    public boolean addUser(User user){
+        
+        try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,'" + user.getUserName() + "','" + user.getPassword() +"','nom','prenom','mail@')");
+            
+            System.out.println("-----------------------------------------------");
+            System.out.println("INSERT INTO users VALUES (NULL,'" + user.getUserName()+ "','" + user.getPassword() +"','nom','prenom','mail@')");
+            System.out.println("-----------------------------------------------");
+            pstmt.execute();
+        }
+        catch(Exception e){
+            
+        }
+        if(!userExist(user.getUserName())){    
+            userList.put(user.getUserName(), user);
+            return true;
+        }
+        return false;
     }
     public void removeUser(User user){
+        
+        try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("DELETE FROM 'users' WHERE 'users'.'userName' = ?");
+            pstmt.setString(1, user.getUserName());
+           
+            System.out.println("-----------------------------------------------");
+            System.out.println("DELETE FROM 'users' WHERE 'users'.'userName' = " + user.getUserName() +"");
+            System.out.println("-----------------------------------------------");
+            
+            pstmt.execute();
+        }
+        catch(Exception e){
+            
+        }
+        
+        
         userList.remove(user);
     }
     
     public void removeUser(String userName){
+                try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("DELETE FROM 'users' WHERE 'users'.'userName' = ?");
+            pstmt.setString(1, userName);
+           
+            System.out.println("-----------------------------------------------");
+            System.out.println("DELETE FROM 'users' WHERE 'users'.'userName' = " + userName +"");
+            System.out.println("-----------------------------------------------");
+            
+            pstmt.execute();
+        }
+        catch(Exception e){
+            
+        }
+        
         userList.remove(userName);
     }
 
@@ -49,6 +98,8 @@ public class UsersManager {
         try{
             Connection connection = dataSource.getConnection();
             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = " + userName);
+            
+
             ResultSet rs = pstmt.executeQuery();
         }
         catch(Exception e){
@@ -57,26 +108,7 @@ public class UsersManager {
         
         return userList.get(userName);
     }
-    
-    public boolean addUser(String userName, String password){
-    
         
-        try{
-            Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (,'" + userName + "','" + password +"','nom','prenom','mail@')");
-            pstmt.execute();
-        }
-        catch(Exception e){
-            
-        }
-        
-        if(!userExist(userName)){
-            addUser(new User(userName, password));
-            return true;
-        }
-        return false;
-    }
-    
     public boolean userExist(String userName){
         
         if(findUser(userName) == null)
