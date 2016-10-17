@@ -26,7 +26,7 @@ import javax.sql.DataSource;
 public class UsersManager {
     
     
-    @Resource(lookup = "java:/jdbc/sakila")
+    @Resource(lookup = "java:/jdbc/amtdb")
     private DataSource dataSource;
     
     
@@ -46,16 +46,14 @@ public class UsersManager {
     }
 
     public User findUser(String userName){
-        try{
+     /*   try{
             Connection connection = dataSource.getConnection();
             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = " + userName);
             ResultSet rs = pstmt.executeQuery();
-            
-        
         }
         catch(Exception e){
             
-        }
+        }*/
         
         return userList.get(userName);
     }
