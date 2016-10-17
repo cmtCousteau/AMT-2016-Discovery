@@ -42,17 +42,17 @@ public class CreateAccountServlet extends HttpServlet {
         String passwordRep = request.getParameter("passwordRep");
         
         String email = request.getParameter("email");
-        String error = "";
+        Object error = "Une erreur est survenue";
         //User userTmp = UsersManager.findUser(userName);
         if(!password.equals(passwordRep))
         {
-            error.concat("Les deux mot de passe ne sont pas les meme <p>");
+            String concat = ((String)error).concat("Les deux mot de passe ne sont pas les meme <p>");
             request.setAttribute(("error"), error);
-            //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+            request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
         if(userName.length() < 5 || password.length() < 5)
         {
-            error.concat("UserName ou password top court <p>");
+            String concat = ((String)error).concat("UserName ou password top court <p>");
             request.setAttribute(("error"), error);
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
@@ -60,21 +60,28 @@ public class CreateAccountServlet extends HttpServlet {
         Boolean validation822 = ptr.matcher(email).matches();
         if(!validation822){
             System.out.println("RFC822 not passed");
-            error.concat("Email non valide <p>");
+            String concat = ((String)error).concat("Email non valide <p>");
             request.setAttribute(("error"), error);
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
         else {
 
             if (!usersManager.addUser(new User(userName, password))) {
+<<<<<<< HEAD
                 error.concat("Error, username already used !");
+=======
+                request.setAttribute(("error"), "Error, username already used !");
+=======
+            if (!usersManager.addUser(userName, password)) {
+                String concat = ((String)error).concat("Error, username already used !");
+>>>>>>> bd63e9248a4437d8f7a118f69b373a55eb791b0f
                 request.setAttribute(("error"), error);
 
             } else {
                 request.setAttribute(("OK"), "La creation de compte c'est bien effectuée enfin je crois");
             }
         }
-        request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
+        //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }
 
 
