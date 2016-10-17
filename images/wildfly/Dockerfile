@@ -2,7 +2,7 @@
 
 FROM jboss/wildfly:10.1.0.Final
 
-ADD packages/AMT_labo1_webApp-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
+ADD packages/ServletTest-1.0-SNAPSHOT.war /opt/jboss/wildfly/standalone/deployments/
 
 COPY data/standalone.xml /opt/jboss/wildfly/standalone/configuration/
 COPY data/mysql-connector-java-5.1.40-bin.jar /opt/jboss/wildfly/standalone/deployments/
