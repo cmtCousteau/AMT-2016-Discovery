@@ -8,19 +8,14 @@ package demo.rest;
 import demo.dto.UserDTO;
 import demo.model.User;
 import demo.services.UsersManager;
-import java.lang.reflect.Array;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 import javax.ejb.EJB;
-import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import static javax.ws.rs.HttpMethod.PUT;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -56,7 +51,6 @@ public class UsersManagerRest {
         }
 
         return userListDTO;
-
     }
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -75,7 +69,6 @@ public class UsersManagerRest {
         else{
             return Response.status(418).build();
         }
-        
     }
     
     @Path("{userName}")
@@ -90,12 +83,8 @@ public class UsersManagerRest {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateUser(@PathParam("userName") String userName, UserDTO userDTO){
-        User userTmp = usersManager.findUser(userName);
         
-        
-        userTmp.setPassword(userDTO.getPassword());
-        // Pose problème de changer le userName, car c'est la clé dans la map.
-        // userTmp.setUserName(userDTO.getUserName());
+        usersManager.updateUser(userName, userDTO.getUserName(), userDTO.getPassword());
     } 
     
     @Path("{userName}")
