@@ -46,20 +46,30 @@ public class UsersManager {
     }
 
     public User findUser(String userName){
-     /*   try{
+        try{
             Connection connection = dataSource.getConnection();
             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = " + userName);
             ResultSet rs = pstmt.executeQuery();
         }
         catch(Exception e){
             
-        }*/
+        }
         
         return userList.get(userName);
     }
     
     public boolean addUser(String userName, String password){
     
+        
+        try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (,'" + userName + "','" + password +"','nom','prenom','mail@')");
+            pstmt.execute();
+        }
+        catch(Exception e){
+            
+        }
+        
         if(!userExist(userName)){
             addUser(new User(userName, password));
             return true;
