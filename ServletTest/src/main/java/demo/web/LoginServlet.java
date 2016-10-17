@@ -38,12 +38,13 @@ public class LoginServlet extends HttpServlet {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password"); 
       
+        int id = usersManager.getIdFromUserName(userName);
         
-        if(usersManager.userExist(userName)){
+        if(usersManager.userExist(id)){
             // Si l'utilisateur arrive à se logger on ouvre une session.
-            if(usersManager.passwordMatch(userName, password)){
+            if(usersManager.passwordMatch(id, password)){
                 // Création de la session.
-                request.getSession().setAttribute("user", usersManager.findUser(userName));
+                request.getSession().setAttribute("user", usersManager.findUser(id));
             }
             else{
                  request.setAttribute("error", "username/password is wrong");

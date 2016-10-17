@@ -58,12 +58,14 @@ public class UsersManagerRest {
 
         URI href;
         
-        if(usersManager.findUser(userDTO.getUserName()) == null){
-            usersManager.addUser(fromDTO(userDTO));
+        
+        if(usersManager.addUser(fromDTO(userDTO))){
+            
+            userDTO.setId(usersManager.getIdFromUserName(userDTO.getUserName()));
             href = uriInfo.getBaseUriBuilder()
                             .path(UsersManagerRest.class)
                             .path(UsersManagerRest.class, "getUser")
-                            .build(userDTO.getUserName());
+                            .build(userDTO.getId());
             return Response.created(href).build();
         }
         else{
@@ -71,35 +73,34 @@ public class UsersManagerRest {
         }
     }
     
-    @Path("{userName}")
+    @Path("{user_id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public UserDTO getUser(@PathParam("userName") String userName){
-        User user = usersManager.findUser(userName);
+    public UserDTO getUser(@PathParam("user_id") int id){
+        User user = usersManager.findUser(id);
         return toDTO(user);
     } 
     
-    @Path("{userName}")
+    @Path("{user_id}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void updateUser(@PathParam("userName") String userName, UserDTO userDTO){
+    public void updateUser(@PathParam("user_id") int id, UserDTO userDTO){
         
-        usersManager.updateUser(userName, userDTO.getUserName(), userDTO.getPassword());
+        usersManager.updateUser(id, userDTO.getUserName(), userDTO.getPassword());
     } 
     
-    @Path("{userName}")
+    @Path("{user_id}")
     @DELETE
-    public void deleteUser(@PathParam("userName") String userName){
-        usersManager.removeUser(userName);
+    public void deleteUser(@PathParam("user_id") int id){
+        usersManager.removeUser(id);
     }  
-    
-    
+
     public User fromDTO(UserDTO userDTO){
-        return new User(userDTO.getUserName(), userDTO.getPassword());
+        return new User(userDTO.getId(), userDTO.getUserName(), userDTO.getPassword());
     }
     
     public UserDTO toDTO(User user){
-        return new UserDTO(user.getUserName(), user.getPassword());
+        return new UserDTO(user.getId(), user.getUserName(), user.getPassword());
     }
     
     

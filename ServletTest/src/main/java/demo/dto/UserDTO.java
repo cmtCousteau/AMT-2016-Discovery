@@ -11,6 +11,9 @@ package demo.dto;
  */
 public class UserDTO {
 
+    
+
+    private int id;
     private String userName;
     private String password;
     
@@ -30,11 +33,20 @@ public class UserDTO {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
 
     public UserDTO() {
     } 
     
-    public UserDTO(String userName, String password) {
+    public UserDTO(int id, String userName, String password) {
+        this.id = id;
         this.userName = userName;
         this.password = password;
     } 

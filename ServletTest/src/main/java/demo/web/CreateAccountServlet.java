@@ -36,16 +36,18 @@ public class CreateAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
-
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String passwordRep = request.getParameter("passwordRep");
-
         String email = request.getParameter("email");
+        
         Object error = "Une erreur est survenue";
+       
         boolean isNotOk = false;
+        
         if (!password.equals(passwordRep)) {
             isNotOk = true;
             String concat = ((String) error).concat("Les deux mot de passe ne sont pas les meme <p>");

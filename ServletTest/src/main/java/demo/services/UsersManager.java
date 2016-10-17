@@ -5,15 +5,12 @@
  */
 package demo.services;
 
-import demo.dto.UserDTO;
 import demo.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import javax.annotation.Resource;
 import javax.ejb.Singleton;
 import javax.sql.DataSource;
@@ -36,9 +33,8 @@ public class UsersManager {
  //   private Map<String, User> userList = new HashMap<>();
         
     public boolean addUser(User user){
-        
         try{
-            if(!userExist(user.getUserName())){
+            if(!userExist(getIdFromUserName(user.getUserName()))){
                 Connection connection = dataSource.getConnection();
                 //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,'" + user.getUserName() + "','" + user.getPassword() +"','nom','prenom','mail@')");
                 PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,?,?,'nom','prenom','mail@')");
@@ -57,12 +53,12 @@ public class UsersManager {
         return false;
     }
         
-    public void removeUser(String userName){
+    public void removeUser(int id){
         
         try{
             Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("DELETE FROM users WHERE userName = ?");
-            pstmt.setString(1, userName);           
+            PreparedStatement pstmt = connection.prepareStatement("DELETE FROM users WHERE user_id = ?");
+            pstmt.setInt(1, id);           
             pstmt.execute();
         }
         catch(Exception e){
@@ -70,37 +66,37 @@ public class UsersManager {
         }
     }
 
-    public void updateUser(String userName, String newUserName, String newPassword){
+    public void updateUser(int id, String newUserName, String newPassword){
     
          try{
             Connection connection = dataSource.getConnection();
            
-            PreparedStatement pstmt = connection.prepareStatement("UPDATE users SET userName = ?, user_password = ? WHERE userName = ?");
+            PreparedStatement pstmt = connection.prepareStatement("UPDATE users SET userName = ?, user_password = ? WHERE user_id = ?");
             pstmt.setString(1, newUserName);
             pstmt.setString(2, newPassword); 
-            pstmt.setString(3, userName); 
+            pstmt.setInt(3, id); 
             
             pstmt.execute();
         }
         catch(Exception e){
             System.out.println(e.getMessage());
         }
-        
-        
     }
     
-    public User findUser(String userName){
+    public User findUser(int id){
         try{
             Connection connection = dataSource.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = ?");
-            pstmt.setString(1, userName); 
+            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE user_id = ?");
+            pstmt.setInt(1, id); 
             ResultSet rs = pstmt.executeQuery();
             
-            // FAIRE UN TEST VALEUR DE RETOUR !!!!!!!!!!!!!!!!!!!!!!
-            
-            rs.first();
-            return new User(rs.getString("userName"),
-                            rs.getString("user_password")); 
+            if (rs.next() ) {
+                rs.first();
+                return new User(rs.getInt("user_id"),
+                                rs.getString("userName"),
+                                rs.getString("user_password"));
+            }
+            return null;
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -109,17 +105,17 @@ public class UsersManager {
         return null;
     }
         
-    public boolean userExist(String userName){
+    public boolean userExist(int id){
         
-        if(findUser(userName) == null)
+        if(findUser(id) == null)
             return false;
         else
             return true;
     }
     
-    public boolean passwordMatch(String userName, String password){
-        if(userExist(userName)){
-            if(findUser(userName).getPassword().equals(password))
+    public boolean passwordMatch(int id, String password){
+        if(userExist(id)){
+            if(findUser(id).getPassword().equals(password))
                 return true;
         }
         return false;
@@ -135,7 +131,8 @@ public class UsersManager {
             ResultSet rs = pstmt.executeQuery();
             
             while(rs.next()){
-                userList.add(new User(rs.getString("userName"),
+                userList.add(new User(rs.getInt("user_id"),
+                                      rs.getString("userName"),
                                       rs.getString("user_password")));
             }
         }
@@ -144,6 +141,25 @@ public class UsersManager {
         }
         
         return userList;
+    }
+    
+    public int getIdFromUserName(String userName){
+        try{
+            Connection connection = dataSource.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE userName = ?");
+            pstmt.setString(1, userName); 
+            ResultSet rs = pstmt.executeQuery();
+            
+            // FAIRE UN TEST VALEUR DE RETOUR !!!!!!!!!!!!!!!!!!!!!!
+            
+            rs.first();
+            return rs.getInt("user_id");
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        return 0;    
     }
     
 }
