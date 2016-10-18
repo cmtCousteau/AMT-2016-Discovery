@@ -13,10 +13,10 @@ public class UserDTO {
 
  
     private int id;
-    private String last_name;
-    private String first_name;
     private String userName;
     private String password;
+    private String last_name;
+    private String first_name;
     private String email;
     
     public void setEmail(String email) {

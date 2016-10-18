@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        boolean userLoginOk = false;
+        
         String userName = request.getParameter("userName");
         String password = request.getParameter("password"); 
       

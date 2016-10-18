@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.annotation.Resource;
-import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 import javax.sql.DataSource;
 
 /**
@@ -20,26 +20,25 @@ import javax.sql.DataSource;
  * @author marco
  */
 
-@Singleton
+@Stateless
 public class UsersManager {
     
     
     @Resource(lookup = "java:/jdbc/amtdb")
     private DataSource dataSource;
-    
-    
-    // faire une map
-    //private static List userList = new MapList();
- //   private Map<String, User> userList = new HashMap<>();
-        
+            
     public boolean addUser(User user){
         try{
             if(!userExist(getIdFromUserName(user.getUserName()))){
                 Connection connection = dataSource.getConnection();
                 //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,'" + user.getUserName() + "','" + user.getPassword() +"','nom','prenom','mail@')");
-                PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,?,?,'nom','prenom','mail@')");
+                PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,?,?,?,?,?)");
                 pstmt.setString(1, user.getUserName());
                 pstmt.setString(2, user.getPassword());
+                pstmt.setString(3, user.getFirst_name());
+                pstmt.setString(4, user.getLast_name());
+                pstmt.setString(5, user.getEmail());
+                
                 pstmt.execute();
                 return true;
             }

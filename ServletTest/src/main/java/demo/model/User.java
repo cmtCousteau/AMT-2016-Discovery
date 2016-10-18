@@ -12,12 +12,11 @@ package demo.model;
 public class User {
 
     private int id;
-    private String last_name;
-    private String first_name;
     private String userName;
     private String password;
+    private String last_name;
+    private String first_name;
     private String email;
-
     
     public void setId(int id) {
         this.id = id;

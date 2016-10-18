@@ -10,7 +10,6 @@ import demo.services.UsersManager;
 
 import java.io.IOException;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
