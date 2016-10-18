@@ -96,11 +96,22 @@ public class UsersManagerRest {
     }  
 
     public User fromDTO(UserDTO userDTO){
-        return new User(userDTO.getId(), userDTO.getUserName(), userDTO.getPassword());
+        
+        return new User(userDTO.getId(),
+                        userDTO.getUserName(),
+                        userDTO.getPassword(),
+                        userDTO.getFirst_name(),
+                        userDTO.getLast_name(),
+                        userDTO.getEmail());
     }
     
     public UserDTO toDTO(User user){
-        return new UserDTO(user.getId(), user.getUserName(), user.getPassword());
+        return new UserDTO(user.getId(),
+                           user.getUserName(),
+                           user.getPassword(),
+                           user.getFirst_name(),
+                           user.getLast_name(),
+                           user.getEmail());
     }
     
     

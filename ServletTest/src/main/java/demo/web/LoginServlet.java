@@ -5,11 +5,9 @@
  */
 package demo.web;
 
-import demo.model.User;
 import demo.services.UsersManager;
 import java.io.IOException;
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,11 +38,12 @@ public class LoginServlet extends HttpServlet {
       
         int id = usersManager.getIdFromUserName(userName);
         
-        if(usersManager.userExist(id)){
+        if(id != -1){
             // Si l'utilisateur arrive à se logger on ouvre une session.
             if(usersManager.passwordMatch(id, password)){
                 // Création de la session.
                 request.getSession().setAttribute("user", usersManager.findUser(id));
+                request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
             }
             else{
                  request.setAttribute("error", "username/password is wrong");

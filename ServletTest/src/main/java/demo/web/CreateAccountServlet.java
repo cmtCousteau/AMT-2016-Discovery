@@ -68,7 +68,7 @@ public class CreateAccountServlet extends HttpServlet {
             request.setAttribute(("error"), "Email non valide <p>");
             request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }*/
-        if (!usersManager.addUser(new User(userName, password))) {
+        if (!isNotOk && !usersManager.addUser(new User(userName, password, name, surname, email))) {
             isNotOk = true;
             request.setAttribute(("error"), "Error, username already used !");
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);

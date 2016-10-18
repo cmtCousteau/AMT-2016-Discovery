@@ -94,7 +94,10 @@ public class UsersManager {
                 rs.first();
                 return new User(rs.getInt("user_id"),
                                 rs.getString("userName"),
-                                rs.getString("user_password"));
+                                rs.getString("user_password"),
+                                rs.getString("first_name"),
+                                rs.getString("last_name"),
+                                rs.getString("email"));
             }
             return null;
         }
@@ -133,7 +136,10 @@ public class UsersManager {
             while(rs.next()){
                 userList.add(new User(rs.getInt("user_id"),
                                       rs.getString("userName"),
-                                      rs.getString("user_password")));
+                                      rs.getString("user_password"),
+                                      rs.getString("first_name"),
+                                      rs.getString("last_name"),
+                                      rs.getString("email")));
             }
         }
         catch(Exception e){
@@ -159,7 +165,7 @@ public class UsersManager {
             System.out.println(e.getMessage());
         }
         
-        return 0;    
+        return -1;    
     }
     
 }
