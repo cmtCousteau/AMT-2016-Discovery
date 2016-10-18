@@ -58,7 +58,6 @@ public class UsersManagerRest {
 
         URI href;
         
-        
         if(usersManager.addUser(fromDTO(userDTO))){
             
             userDTO.setId(usersManager.getIdFromUserName(userDTO.getUserName()));

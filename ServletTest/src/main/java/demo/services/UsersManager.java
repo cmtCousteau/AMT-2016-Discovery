@@ -155,7 +155,8 @@ public class UsersManager {
             pstmt.setString(1, userName); 
             ResultSet rs = pstmt.executeQuery();
             
-            // FAIRE UN TEST VALEUR DE RETOUR !!!!!!!!!!!!!!!!!!!!!!
+            if(!rs.next())
+                return -1;
             
             rs.first();
             return rs.getInt("user_id");
