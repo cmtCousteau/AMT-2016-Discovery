@@ -48,7 +48,7 @@
                     <input type="text" name="userName" placeholder="Username" id="userName" />
                     <input type="password" name="password" placeholder="Password" id="password" />
                     <input type="password" name="passwordRep" placeholder="Password bis" id="passwordRep" />
-                    <input type="text" name="E-mail" placeholder="E-mail" id="email" />
+                    <input type="text" name="email" placeholder="E-mail" id="email" />
 
                     <input type="submit" class="login login-submit hvr-icon-float" value="Submit"/>
                 </p>
