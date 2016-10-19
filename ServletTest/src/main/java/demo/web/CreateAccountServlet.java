@@ -36,8 +36,8 @@ public class CreateAccountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
+        String first_name = request.getParameter("first_name");
+        String last_name = request.getParameter("last_name");
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String passwordRep = request.getParameter("passwordRep");
@@ -76,7 +76,7 @@ public class CreateAccountServlet extends HttpServlet {
             request.setAttribute(("error"), error);
         }
         if(!isNotOk) {
-            usersManager.addUser(new User(userName, password, name, surname, email));
+            usersManager.addUser(new User(userName, password, first_name, last_name, email));
             request.setAttribute(("OK"), "La creation de compte c'est bien effectuée enfin je crois");
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
