@@ -16,7 +16,7 @@ password : *admin*
 
 ##Base de données
 
-![Screenshot](doc\db.png)
+![Screenshot](doc/db.png)
 
 ## api REST
 * **GET** : notre api REST contient 2 *GET*,l'un retourne tous les utilisateurs contenaut dans la base de données, et l'autre retourne les informations
