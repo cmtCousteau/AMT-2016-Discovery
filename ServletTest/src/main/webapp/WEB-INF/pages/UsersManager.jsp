@@ -74,8 +74,8 @@
     $(function () {
         $('#example2').DataTable({
             ajax: {
-                url: '/api/usersManagerTest',
-                dataSrc: 'data'
+                url: '/ServletTest-1.0-SNAPSHOT/api/usersManagerTest',
+                dataSrc: ""
             },
             columns: [ {data: "userName"}],
             "paging": true,

@@ -44,7 +44,7 @@
                 <p>
                     <input type="text" name="first_name" placeholder="name" id="first_name" />
                     <input type="text" name="last_name" placeholder="lastname" id="last_name" />
-
+                    <p>
                     <input type="text" name="userName" placeholder="Username" id="userName" />
                     <input type="password" name="password" placeholder="Password" id="password" />
                     <input type="password" name="passwordRep" placeholder="Password bis" id="passwordRep" />

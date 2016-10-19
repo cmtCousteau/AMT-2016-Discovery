@@ -9,7 +9,7 @@
     </li>
     <li class=" zm-active"><a href="index.jsp">Home</a>
     <c:if test="${sessionScope.user.userName != null}">
-        <li class=" zm hvr-fade"><a href="usersManager">User manager</a>
+        <li class=" zm hvr-fade"><a href="UsersManager">User manager</a>
         </li>
         <li class=" zm-right-item hvr-fade"><a href="#">MyAccount</a>
         </li>
