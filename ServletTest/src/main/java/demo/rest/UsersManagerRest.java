@@ -68,6 +68,7 @@ public class UsersManagerRest {
 
         URI href;
         
+        
         if(usersManager.addUser(fromDTO(userDTO))){
             
             userDTO.setId(usersManager.getIdFromUserName(userDTO.getUserName()));
@@ -123,7 +124,7 @@ public class UsersManagerRest {
             return Response.created(href).build();
         }
         else
-            return Response.status(418).build();
+            return Response.status(404).build();
     } 
     
     /**
@@ -139,10 +140,10 @@ public class UsersManagerRest {
         
         if(usersManager.userExist(id)){
             usersManager.removeUser(id);
-            return Response.status(200).build();
+            return Response.status(204).build();
         }
         else
-            return Response.status(418).build();
+            return Response.status(404).build();
     }  
 
     /**
@@ -168,7 +169,7 @@ public class UsersManagerRest {
     public UserDTO toDTO(User user){
         return new UserDTO(user.getId(),
                            user.getUserName(),
-                           user.getPassword(),
+                           user.getPassword(), // A voir !!!!!!!!!!!!!!
                            user.getFirst_name(),
                            user.getLast_name(),
                            user.getEmail());

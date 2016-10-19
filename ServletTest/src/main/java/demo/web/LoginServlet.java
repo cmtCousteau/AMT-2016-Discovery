@@ -58,6 +58,7 @@ public class LoginServlet extends HttpServlet {
                 // Création de la session.
                 request.getSession().setAttribute("user", usersManager.findUser(id));
                 request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
+                //response.sendRedirect(userName);
             }
             else{
                  request.setAttribute("error", "username/password is wrong"); 

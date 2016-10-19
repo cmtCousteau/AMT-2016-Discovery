@@ -145,7 +145,7 @@
                     </security>
                 </datasource>
                 <datasource jta="true" jndi-name="java:/jdbc/amtdb" pool-name="amtdb" enabled="true" use-ccm="true">
-                    <connection-url>jdbc:mysql://192.168.99.100:3306/amtdb</connection-url>
+                    <connection-url>jdbc:mysql://db:3306/amtdb</connection-url>
                     <driver-class>com.mysql.jdbc.Driver</driver-class>
                     <driver>mysql-connector-java-5.1.40-bin.jar_com.mysql.jdbc.Driver_5_1</driver>
                     <security>
