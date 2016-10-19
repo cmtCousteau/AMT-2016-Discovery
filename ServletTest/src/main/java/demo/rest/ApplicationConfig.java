@@ -10,7 +10,7 @@ import javax.ws.rs.core.Application;
 
 /**
  *
- * @author marco
+ * @author Marco Monzione - Simon Baehler
  */
 @javax.ws.rs.ApplicationPath("/api")
 public class ApplicationConfig extends Application {

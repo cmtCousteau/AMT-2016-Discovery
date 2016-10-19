@@ -28,7 +28,7 @@ import javax.ws.rs.core.UriInfo;
 
 /**
  *
- * @author marco
+ * @author Marco Monzione - Simon Baehler
  */
 @Stateless
 @Path("/usersManagerTest")
@@ -40,6 +40,10 @@ public class UsersManagerRest {
     @Context
     UriInfo uriInfo;
     
+    /**
+     * 
+     * @return
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Collection <UserDTO> getUsers(){
@@ -52,6 +56,12 @@ public class UsersManagerRest {
 
         return userListDTO;
     }
+
+    /**
+     *
+     * @param userDTO
+     * @return
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createUser(UserDTO userDTO){
@@ -72,6 +82,11 @@ public class UsersManagerRest {
         }
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     @Path("{user_id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -80,20 +95,39 @@ public class UsersManagerRest {
         return toDTO(user);
     } 
     
+    /**
+     *
+     * @param id
+     * @param userDTO
+     */
     @Path("{user_id}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void updateUser(@PathParam("user_id") int id, UserDTO userDTO){
         
-        usersManager.updateUser(id, userDTO.getUserName(), userDTO.getPassword());
+        usersManager.updateUser(id,
+                                userDTO.getUserName(),
+                                userDTO.getPassword(), 
+                                userDTO.getFirst_name(), 
+                                userDTO.getLast_name(), 
+                                userDTO.getEmail());
     } 
     
+    /**
+     *
+     * @param id
+     */
     @Path("{user_id}")
     @DELETE
     public void deleteUser(@PathParam("user_id") int id){
         usersManager.removeUser(id);
     }  
 
+    /**
+     *
+     * @param userDTO
+     * @return
+     */
     public User fromDTO(UserDTO userDTO){
         
         return new User(userDTO.getId(),
@@ -104,6 +138,11 @@ public class UsersManagerRest {
                         userDTO.getEmail());
     }
     
+    /**
+     *
+     * @param user
+     * @return
+     */
     public UserDTO toDTO(User user){
         return new UserDTO(user.getId(),
                            user.getUserName(),

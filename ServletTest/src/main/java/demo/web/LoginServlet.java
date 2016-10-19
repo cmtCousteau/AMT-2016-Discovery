@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author marco
+ * @author Marco Monzione - Simon Baehler
  */
 
 public class LoginServlet extends HttpServlet {
@@ -23,12 +23,26 @@ public class LoginServlet extends HttpServlet {
     @EJB
     private UsersManager usersManager;
     
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
             request.getRequestDispatcher("WEB-INF/pages/login.jsp").forward(request, response);
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -46,8 +60,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("WEB-INF/pages/welcome.jsp").forward(request, response);
             }
             else{
-                 request.setAttribute("error", "username/password is wrong");
-                 
+                 request.setAttribute("error", "username/password is wrong"); 
             }
         }
         else{

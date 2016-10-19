@@ -27,6 +27,11 @@ public class UsersManager {
     @Resource(lookup = "java:/jdbc/amtdb")
     private DataSource dataSource;
             
+    /**
+     *
+     * @param user
+     * @return
+     */
     public boolean addUser(User user){
         try{
             if(!userExist(getIdFromUserName(user.getUserName()))){
@@ -52,6 +57,10 @@ public class UsersManager {
         return false;
     }
         
+    /**
+     *
+     * @param id
+     */
     public void removeUser(int id){
         
         try{
@@ -65,15 +74,25 @@ public class UsersManager {
         }
     }
 
-    public void updateUser(int id, String newUserName, String newPassword){
+    /**
+     *
+     * @param id
+     * @param newUserName
+     * @param newPassword
+     */
+    public void updateUser(int id, String newUserName, String newPassword, String first_name, String last_name, String email){
     
          try{
             Connection connection = dataSource.getConnection();
            
-            PreparedStatement pstmt = connection.prepareStatement("UPDATE users SET userName = ?, user_password = ? WHERE user_id = ?");
+            PreparedStatement pstmt = connection.prepareStatement("UPDATE users SET userName = ?,user_password = ?, first_name = ?, last_name = ?, email = ? WHERE user_id = ?");
             pstmt.setString(1, newUserName);
             pstmt.setString(2, newPassword); 
-            pstmt.setInt(3, id); 
+            pstmt.setString(3, first_name);
+            pstmt.setString(4, last_name);
+            pstmt.setString(5, email);
+            
+            pstmt.setInt(6, id); 
             
             pstmt.execute();
         }
@@ -82,6 +101,11 @@ public class UsersManager {
         }
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public User findUser(int id){
         try{
             Connection connection = dataSource.getConnection();
@@ -107,6 +131,11 @@ public class UsersManager {
         return null;
     }
         
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean userExist(int id){
         
         if(findUser(id) == null)
@@ -115,6 +144,12 @@ public class UsersManager {
             return true;
     }
     
+    /**
+     *
+     * @param id
+     * @param password
+     * @return
+     */
     public boolean passwordMatch(int id, String password){
         if(userExist(id)){
             if(findUser(id).getPassword().equals(password))
@@ -123,6 +158,10 @@ public class UsersManager {
         return false;
     }
     
+    /**
+     *
+     * @return
+     */
     public Collection <User> getUsersListArray(){
         
         Collection <User> userList= new ArrayList();
@@ -148,6 +187,11 @@ public class UsersManager {
         return userList;
     }
     
+    /**
+     *
+     * @param userName
+     * @return
+     */
     public int getIdFromUserName(String userName){
         try{
             Connection connection = dataSource.getConnection();
