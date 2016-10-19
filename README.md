@@ -20,7 +20,7 @@ password : *admin*
 
 ## fonctionnement de l'architecture
 
-![Screenshot](diagramme/db.png)
+![Screenshot](doc/diagramme.png)
 
 
 ## api REST
