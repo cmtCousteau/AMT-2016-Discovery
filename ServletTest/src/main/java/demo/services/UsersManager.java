@@ -144,6 +144,16 @@ public class UsersManager {
             return true;
     }
     
+    
+    public boolean userExist(String userName){
+    
+         if(findUser(getIdFromUserName(userName)) == null)
+            return false;
+        else
+            return true;
+        
+    }
+    
     /**
      *
      * @param id

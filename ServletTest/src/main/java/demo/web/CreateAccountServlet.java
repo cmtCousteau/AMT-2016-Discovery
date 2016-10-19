@@ -69,13 +69,14 @@ public class CreateAccountServlet extends HttpServlet {
             request.setAttribute(("error"),error);
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
-        if (!isNotOk && !usersManager.addUser(new User(userName, password, name, surname, email))) {
+        
+        if(usersManager.userExist(userName)){
             isNotOk = true;
             error += "Error, username already used !";
             request.setAttribute(("error"), error);
-            //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
         if(!isNotOk) {
+            usersManager.addUser(new User(userName, password, name, surname, email));
             request.setAttribute(("OK"), "La creation de compte c'est bien effectuée enfin je crois");
             //request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
         }
