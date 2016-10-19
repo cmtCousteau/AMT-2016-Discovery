@@ -99,28 +99,50 @@ public class UsersManagerRest {
      *
      * @param id
      * @param userDTO
+     * @return 
      */
     @Path("{user_id}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public void updateUser(@PathParam("user_id") int id, UserDTO userDTO){
+    public Response updateUser(@PathParam("user_id") int id, UserDTO userDTO){
         
-        usersManager.updateUser(id,
-                                userDTO.getUserName(),
-                                userDTO.getPassword(), 
-                                userDTO.getFirst_name(), 
-                                userDTO.getLast_name(), 
-                                userDTO.getEmail());
+        URI href;
+        
+        if(usersManager.userExist(id)){
+            usersManager.updateUser(id,
+                                    userDTO.getUserName(),
+                                    userDTO.getPassword(), 
+                                    userDTO.getFirst_name(), 
+                                    userDTO.getLast_name(), 
+                                    userDTO.getEmail());
+            
+            href = uriInfo.getBaseUriBuilder()
+                            .path(UsersManagerRest.class)
+                            .path(UsersManagerRest.class, "getUser")
+                            .build(userDTO.getId());
+            return Response.created(href).build();
+        }
+        else
+            return Response.status(418).build();
     } 
     
     /**
      *
      * @param id
+     * @return 
      */
     @Path("{user_id}")
     @DELETE
-    public void deleteUser(@PathParam("user_id") int id){
-        usersManager.removeUser(id);
+    public Response deleteUser(@PathParam("user_id") int id){
+        
+        URI href;
+        
+        if(usersManager.userExist(id)){
+            usersManager.removeUser(id);
+            return Response.status(200).build();
+        }
+        else
+            return Response.status(418).build();
     }  
 
     /**

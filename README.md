@@ -39,3 +39,5 @@ et ensuite l'attribué au nouvel objet DTO contenant l'utilisateur.
 être amélioré en logguant l'utilisateur directement à la création du compte.
 
 * La méthode *PUT* du CRUD ne vérifie pas si le nouveau username n'est pas déjà utilisé, on peut donc se retrouver avec 2 personnes avec le même username.
+
+## Test de l'api REST avec postman
