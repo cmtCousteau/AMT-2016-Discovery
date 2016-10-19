@@ -18,6 +18,11 @@ password : *admin*
 
 ![Screenshot](doc/db.png)
 
+## fonctionnement de l'architecture
+
+![Screenshot](diagramme/db.png)
+
+
 ## api REST
 * **GET** : notre api REST contient 2 *GET*,l'un retourne tous les utilisateurs contenaut dans la base de données, et l'autre retourne les informations
 d'un seul utilisateur en fonction de l'ID reçu dans l'URL.
