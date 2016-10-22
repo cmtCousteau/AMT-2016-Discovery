@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo.services;
-
 import demo.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,27 +10,26 @@ import javax.ejb.Stateless;
 import javax.sql.DataSource;
 
 /**
- *
- * @author marco
+ * * @author Marco Monzione - Simon Baehler
  */
-
 @Stateless
 public class UsersManager {
     
-    
-    @Resource(lookup = "java:/amtdb")
+    @Resource(lookup = "java:/jdbc/amtdb")
     private DataSource dataSource;
             
     /**
-     *
+     * Permet d'ajouter un utilisateur dans la base de données.
+     * 
      * @param user
      * @return
      */
     public boolean addUser(User user){
         try{
+            // Vérifie qu'un utilisateur avec le même username n'est pas déjà 
+            // présent dans la base de données.
             if(!userExist(getIdFromUserName(user.getUserName()))){
                 Connection connection = dataSource.getConnection();
-                //PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,'" + user.getUserName() + "','" + user.getPassword() +"','nom','prenom','mail@')");
                 PreparedStatement pstmt = connection.prepareStatement("INSERT INTO users VALUES (NULL,?,?,?,?,?)");
                 pstmt.setString(1, user.getUserName());
                 pstmt.setString(2, user.getPassword());
@@ -58,7 +51,8 @@ public class UsersManager {
     }
         
     /**
-     *
+     * Supprime un utilisateur de la base de données en fonction de son ID.
+     * 
      * @param id
      */
     public void removeUser(int id){
@@ -76,9 +70,15 @@ public class UsersManager {
 
     /**
      *
+     *  Met un jour TOUS les champs d'un utilisateur dans la base de données
+     * (sauf son id).
+     * 
      * @param id
      * @param newUserName
      * @param newPassword
+     * @param first_name
+     * @param last_name
+     * @param email
      */
     public void updateUser(int id, String newUserName, String newPassword, String first_name, String last_name, String email){
     
@@ -102,9 +102,10 @@ public class UsersManager {
     }
     
     /**
-     *
+     * Cherche un utilisateur dans la base de données en fonction de son id.
+     * 
      * @param id
-     * @return
+     * @return l'utilisateur trouver, sinon NULL.
      */
     public User findUser(int id){
         try{
@@ -132,9 +133,9 @@ public class UsersManager {
     }
         
     /**
-     *
+     * Vérifie si un utilisateur existe en fonction de son id.
      * @param id
-     * @return
+     * @return true/false en fonction du résultat.
      */
     public boolean userExist(int id){
         
@@ -144,10 +145,17 @@ public class UsersManager {
             return true;
     }
     
-    
+    /**
+     * Vérifie si un utilisateur existe en fonction de son username.
+     * @param userName
+     * @return true/false en fonction du résultat.
+     */
     public boolean userExist(String userName){
     
-         if(findUser(getIdFromUserName(userName)) == null)
+         // En fait on essaye de trouver l'id correspondant au username
+         // dans la base de données, si on reçoit -1 c'est que l'utilisateur
+         // n'existe pas.
+        if(getIdFromUserName(userName) == -1)
             return false;
         else
             return true;
@@ -155,10 +163,12 @@ public class UsersManager {
     }
     
     /**
-     *
+     * Test si le password reçu est celui de l'utilisateur correspondant à
+     * l'id reçu en paramètre.
+     * 
      * @param id
      * @param password
-     * @return
+     * @return true/false en fonction du résultat.
      */
     public boolean passwordMatch(int id, String password){
         if(userExist(id)){
@@ -169,8 +179,9 @@ public class UsersManager {
     }
     
     /**
-     *
-     * @return
+     * 
+     * @return la liste complète des utilisateurs contenus dans la base
+     * de données.
      */
     public Collection <User> getUsersListArray(){
         
@@ -193,14 +204,13 @@ public class UsersManager {
         catch(Exception e){
             System.out.println(e.getMessage());
         }
-        
         return userList;
     }
     
     /**
-     *
+     * Récupère l'id d'un utilisateur en fonction de son username.
      * @param userName
-     * @return
+     * @return l'id de l'utilisateur en cas de succès, -1 sinon.
      */
     public int getIdFromUserName(String userName){
         try{
@@ -221,5 +231,4 @@ public class UsersManager {
         
         return -1;    
     }
-    
 }

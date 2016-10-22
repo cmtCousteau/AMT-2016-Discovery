@@ -1,5 +1,9 @@
 # AMT Discovery 2016
 
+
+## Description du projet
+
+
 ## How to use
 
 First step you need to download the project. Next you must have docker and docker-compose installed.
@@ -48,3 +52,11 @@ et ensuite l'attribué au nouvel objet DTO contenant l'utilisateur.
 * La méthode *PUT* du CRUD ne vérifie pas si le nouveau username n'est pas déjà utilisé, on peut donc se retrouver avec 2 personnes avec le même username.
 
 ## Test de l'api REST avec postman
+Un script postman contenant les différentes requêtes de tests sera fourni dans le dossier "Postman". Il vous suffira
+de changer les variables de l'url (pour accèder à l'api REST) et la variable de l'id pour choisir quel utilisateur sélectionner
+suivant la requête.
+
+## Problème connues
+Nous avons rencontré un petit problème, en effet dans la class "UsersManager.java" nous devons avoir une configuration différentes pour la "dataSource".
+Nous devons altérner entre ``java:/jdbc/amtdb`` et ``java:/amtdb`` sans quoi ça ne marche pas sur l'une ou l'autre de nos configuration. La version
+avec ``java:/jdbc/amtdb`` semble fonctionner sur le server wildfly démmaré dans docker, donc on c'est cette version qui sera fournie.
