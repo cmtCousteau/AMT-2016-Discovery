@@ -26,6 +26,10 @@ password : *admin*
 
 ![Screenshot](doc/diagramme.png)
 
+####Remarques sur le fonctionnement
+On peut voir que nos servlets ainsi que notre api REST font appellent au "userManager", celui-ci se charge de gérer les UserDTO qui font le lien
+avec les User. Le "userManager" se charge également de faire les requêtes SQL sur la base de données.
+
 
 ## api REST
 * **GET** : notre api REST contient 2 *GET*,l'un retourne tous les utilisateurs contenaut dans la base de données, et l'autre retourne les informations
