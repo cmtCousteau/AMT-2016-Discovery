@@ -43,7 +43,7 @@ public class UsersManagerServlet extends HttpServlet {
         out.println("</html>");
         }
         */
-        request.getRequestDispatcher("WEB-INF/pages/sdas.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/pages/usersManager.jsp").forward(request, response);
     }
 
     /**
