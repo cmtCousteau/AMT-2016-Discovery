@@ -74,7 +74,7 @@
     $(function () {
         $('#example2').DataTable({
             ajax: {
-                url: '/ServletTest-1.0-SNAPSHOT/api/usersManagerTest',
+                url: '/AMT-Projet-web/api/usersManagerTest',
                 dataSrc: ""
             },
             columns: [ {data: "userName"}],

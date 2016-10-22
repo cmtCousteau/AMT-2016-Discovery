@@ -12,7 +12,7 @@ Normalement docker devrait télécharger les dépendances et démarrer les image
 web il faudra utiliser l'adresse si vous utiliser docker toolbox : ``http://192.168.99.100:9090/AMT-Projet-web/UsersManager``  
 ou si votre OS possède docker nativement: ``http://localhost:9090/AMT-Projet-web/UsersManager``
 
-Un compte par défaut est créer pour vous logger sur le site :
+Un compte par défaut est créé pour vous logger sur le site :
 username : *admin*  
 password : *admin*
 
@@ -28,7 +28,7 @@ pouvoir accèder à cette page).
 ![Screenshot](doc/diagramme.png)
 
 ####Remarques sur le fonctionnement
-On peut voir que nos servlets ainsi que notre api REST font appellent au "userManager", celui-ci se charge de gérer les UserDTO qui font le lien
+On peut voir que nos servlets, ainsi que notre api REST font appellent au"userManager", celui-ci se charge de gérer les UserDTO qui font le lien
 avec les User. Le "userManager" se charge également de faire les requêtes SQL sur la base de données.
 
 
@@ -46,10 +46,10 @@ nous ne faisont pas de test pour voir quel champs sont défini dans le JSON et l
 pass de l'utilisateur (ce qui nous permet de le changer facilement avec l'api REST), ce qui n'est pas terrible. Nous avons procéder ainsi pour des raisons de simplicité mais
 également parce que notre login se fait encore avec un servlet et n'utilise pas encore l'api REST.
 
-* L'ID de l'utilisateur peut également être modifier à l'intérieur du code, ce qui est faux, mais j'ai eu besoin
-de cette fonctionnalité lors de la création d'un utilisateur, en effet comme l'ID et déféni de manière automatique
-je ne peux pas las définir tous de suite dans l'objet DTO, je dois dabord aller la chercher dans la base de données
-et ensuite l'attribué au nouvel objet DTO contenant l'utilisateur.
+* L'ID de l'utilisateur peut également être modifiée à l'intérieur du code, ce qui est faux, mais nous avons eu besoin
+de cette fonctionnalité lors de la création d'un utilisateur, en effet comme l'ID et défénie de manière automatique,
+nous ne pouvons pas la définir tous de suite dans l'objet DTO lors de sa création, nous devons dabord aller la chercher dans la base de données
+et ensuite l'attribuer au nouvel objet DTO contenant l'utilisateur récément créé.
 
 * Une fois un utilisateur créé il faut clicker sur le bouton login et entrer à nouveau ces informations, ce qui pourraît
 être amélioré en logguant l'utilisateur directement à la création du compte.
