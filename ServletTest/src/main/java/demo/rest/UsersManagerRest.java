@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo.rest;
-
 import demo.dto.UserDTO;
 import demo.model.User;
 import demo.services.UsersManager;
@@ -42,7 +36,9 @@ public class UsersManagerRest {
     
     /**
      * 
-     * @return
+     * Traite la requête "GET"
+     * 
+     * @return une collection contenant tous les utilisateurs enregistrés
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -59,8 +55,10 @@ public class UsersManagerRest {
 
     /**
      *
+     * Traite la requête "POST" pour créer un utilisateur dans la base de données.
+     * 
      * @param userDTO
-     * @return
+     * @return code d'erreur/succès HTTP
      */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -68,7 +66,9 @@ public class UsersManagerRest {
 
         URI href;
         
-        
+        // On vérifie avant d'ajouter l'utilisateur qu'aucun autre
+        // utilisateur n'est déjà présent dans la base de données avec le même
+        // username.
         if(usersManager.addUser(fromDTO(userDTO))){
             
             userDTO.setId(usersManager.getIdFromUserName(userDTO.getUserName()));
@@ -79,14 +79,14 @@ public class UsersManagerRest {
             return Response.created(href).build();
         }
         else{
-            return Response.status(418).build();
+            return Response.status(400).build();
         }
     }
     
     /**
-     *
+     * Traite la requête "GET" pour un utilisateur particulier.
      * @param id
-     * @return
+     * @return les informations de l'utilisateur au format JSON.
      */
     @Path("{user_id}")
     @GET
@@ -97,10 +97,12 @@ public class UsersManagerRest {
     } 
     
     /**
-     *
+     * Traite la requête "PUT" et met à jour tous les champs de l'utilisateur
+     * spécifié.
+     * 
      * @param id
      * @param userDTO
-     * @return 
+     * @return code d'erreur/succès HTTP
      */
     @Path("{user_id}")
     @PUT
@@ -128,9 +130,10 @@ public class UsersManagerRest {
     } 
     
     /**
-     *
+     * Traite la requête "DELETE" et supprime l'utilisateur spécifié de la base
+     * de données.
      * @param id
-     * @return 
+     * @return code d'erreur/succès HTTP
      */
     @Path("{user_id}")
     @DELETE
@@ -147,7 +150,8 @@ public class UsersManagerRest {
     }  
 
     /**
-     *
+     * Transforme un UserDTO en User.
+     * 
      * @param userDTO
      * @return
      */
@@ -162,18 +166,17 @@ public class UsersManagerRest {
     }
     
     /**
-     *
+     * Transforme un User en UserDTO
+     * 
      * @param user
      * @return
      */
     public UserDTO toDTO(User user){
         return new UserDTO(user.getId(),
                            user.getUserName(),
-                           user.getPassword(), // A voir !!!!!!!!!!!!!!
+                           user.getPassword(),
                            user.getFirst_name(),
                            user.getLast_name(),
                            user.getEmail());
     }
-    
-    
 }

@@ -5,10 +5,7 @@
  */
 package demo.web;
 
-import demo.model.User;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.regex.Pattern;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,16 +17,29 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class UsersManagerServlet extends HttpServlet {
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/UsersManager.jsp").forward(request, response);
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/UsersManager.jsp").forward(request, response);
     }
-
 }

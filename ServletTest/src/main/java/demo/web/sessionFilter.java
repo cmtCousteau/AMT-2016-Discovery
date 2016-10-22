@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo.web;
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -31,6 +25,9 @@ public class sessionFilter implements Filter {
     // configured. 
     private FilterConfig filterConfig = null;
     
+    /**
+     *
+     */
     public sessionFilter() {
     }    
     
@@ -41,13 +38,11 @@ public class sessionFilter implements Filter {
             
         }
         
+        // Si la session ne contient d'utilisateur alors on redirige sur la page
+        // d'accueille.
         if(((HttpServletRequest)request).getSession().getAttribute("user") == null){
           ((HttpServletResponse)response).sendRedirect("/ServletTest-1.0-SNAPSHOT/");
         }
-        else{
-            //request.getRequestDispatcher("WEB-INF/pages/Welcome.jps").forward(request, response);
-        }
-
     }    
     
     private void doAfterProcessing(ServletRequest request, ServletResponse response)
@@ -104,6 +99,7 @@ public class sessionFilter implements Filter {
 
     /**
      * Return the filter configuration object for this filter.
+     * @return 
      */
     public FilterConfig getFilterConfig() {
         return (this.filterConfig);
@@ -126,6 +122,7 @@ public class sessionFilter implements Filter {
 
     /**
      * Init method for this filter
+     * @param filterConfig
      */
     public void init(FilterConfig filterConfig) {        
         this.filterConfig = filterConfig;
@@ -180,6 +177,11 @@ public class sessionFilter implements Filter {
         }
     }
     
+    /**
+     *
+     * @param t
+     * @return
+     */
     public static String getStackTrace(Throwable t) {
         String stackTrace = null;
         try {
@@ -194,6 +196,10 @@ public class sessionFilter implements Filter {
         return stackTrace;
     }
     
+    /**
+     *
+     * @param msg
+     */
     public void log(String msg) {
         filterConfig.getServletContext().log(msg);        
     }

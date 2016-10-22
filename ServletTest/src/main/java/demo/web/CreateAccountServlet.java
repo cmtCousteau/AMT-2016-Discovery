@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo.web;
 
 import demo.model.User;
@@ -17,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.regex.Pattern;
 
 /**
- * @author marco
+ * * @author Marco Monzione - Simon Baehler
  */
 
 public class CreateAccountServlet extends HttpServlet {
@@ -25,13 +20,31 @@ public class CreateAccountServlet extends HttpServlet {
     @EJB
     private UsersManager usersManager;
 
-
+    /**
+     * Gestion des requête "GET", redirigie simplement la requête
+     * sur la page de création de compte.
+     * 
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }
 
+    /**
+     * Gestion de la requête "POST", gère la création d'un nouveau compte
+     * avec les vérification que cela implique (username unique, mot de pass
+     * correct, adresse mail correct ect...).
+     * 
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -53,11 +66,14 @@ public class CreateAccountServlet extends HttpServlet {
        
         boolean isNotOk = false;
         
+        // Vérfie que les 2 mot de pass entrés sont les mêmes.
         if (!password.equals(passwordRep)) {
             isNotOk = true;
             request.setAttribute(("error"), error);
             request.setAttribute(("PasswordNotSimilar"), PasswordNotSimilar);
         }
+        
+        // Vérifie que le l'username et le mot de pass soient assez longs.
         if (userName.length() < 5 || password.length() < 5) {
             isNotOk = true;
             request.setAttribute(("error"), error);
@@ -74,11 +90,15 @@ public class CreateAccountServlet extends HttpServlet {
             request.setAttribute(("badEmail"), badEmail);
         }
         
+        // Vérifie que l'utilisateur n'est pas déjà présent.
         if(usersManager.userExist(userName)){
             isNotOk = true;
             request.setAttribute(("error"), error);
             request.setAttribute(("UserNameAlreadyUsed"), UserNameAlreadyUsed);
         }
+        
+        // Si on arrive jusque là sans problème on va pouvoir ajouter notre
+        // nouvel utilisateur.
         if(!isNotOk) {
             usersManager.addUser(new User(userName, password, first_name, last_name, email));
             request.setAttribute(("OK"), "La creation de compte c'est bien effectuée");

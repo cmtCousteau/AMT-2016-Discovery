@@ -33,9 +33,6 @@
                     <thead>
                     <tr>
                         <th>username</th>
-                        <th>first name</th>
-                        <th>last name</th>
-                        <th>email</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -44,9 +41,6 @@
                     <tfoot>
                     <tr>
                         <th>username</th>
-                        <th>first name</th>
-                        <th>last name</th>
-                        <th>email</th>
                     </tr>
                     </tfoot>
                 </table>
