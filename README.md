@@ -4,19 +4,20 @@
 ## Description du projet
 
 
-## How to use
+## utilisation
 
-First step you need to download the project. Next you must have docker and docker-compose installed.
+Premièrement il faut avoir docker et docker-compose installé. En suite pour construire les images
+il faut aller dans le dossier ``AMT-2016-Discovery`` pui lancé la commande ``docker-compose up --build``. 
+Normalement docker devrait télécharger les dépendances et démarrer les images. Pour accèder au site
+web il faudra utiliser l'adresse ``http://192.168.99.100:9090/ServletTest-1.0-SNAPSHOT`` si vous utiliser
+docker toolbox ou ``http://localhost:9090/ServletTest-1.0-SNAPSHOT`` si votre OS possède docker nativement.
 
-Next go to the directory *AMT-2016-Discovery* and use the following command : ``docker-compose.exe up --build``.
-
-After downling a few thing the web application should be running.
-To access the web app you should use this adress :   
-``http://192.168.99.100:9090/AMT_labo1_webApp-1.0-SNAPSHOT/``.
-
-To access the command console use the this one ``http://192.168.99.100:9990/console/App.html``.  
+Un compte par défaut est créer pour vous logger sur le site :
 username : *admin*  
 password : *admin*
+
+Vous pouvez voir la liste des utilisateurs via l'url ``/ServletTest-1.0-SNAPSHOT/UsersManager`` (il faut être loggé pour
+pouvoir accèder à cette page).
 
 ##Base de données
 

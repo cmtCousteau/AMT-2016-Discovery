@@ -7,6 +7,7 @@
     <filter-mapping>
         <filter-name>sessionFilter</filter-name>
         <url-pattern>/Welcome</url-pattern>
+        <url-pattern>/UsersManager</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>CreateAccount</servlet-name>
