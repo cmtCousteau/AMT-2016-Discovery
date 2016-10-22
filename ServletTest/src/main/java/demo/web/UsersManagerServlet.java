@@ -6,6 +6,7 @@
 package demo.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +28,22 @@ public class UsersManagerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/pages/UsersManager.jsp").forward(request, response);
+        
+        
+     /*       try (PrintWriter out = response.getWriter()) {
+      
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Servlet NewServlet</title>");            
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
+        out.println("</body>");
+        out.println("</html>");
+        }
+        */
+        request.getRequestDispatcher("WEB-INF/pages/sdas.jsp").forward(request, response);
     }
 
     /**
@@ -37,9 +53,9 @@ public class UsersManagerServlet extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      */
-    @Override
+   /* @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/pages/UsersManager.jsp").forward(request, response);
-    }
+    }*/
 }

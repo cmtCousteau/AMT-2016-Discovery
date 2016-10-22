@@ -8,7 +8,7 @@
 
     <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Users Manager</title>
+    <title>Users Manager</title>   
     <jsp:include page="includes/head.jsp"/>
     <!-- /Zetta Menu CSS -->
 </head>
