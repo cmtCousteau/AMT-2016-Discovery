@@ -1,0 +1,9 @@
+demo\web\sessionFilter.class
+demo\rest\UsersManagerRest.class
+demo\web\CreateAccountServlet.class
+demo\web\UsersManagerServlet.class
+demo\model\User.class
+demo\services\UsersManager.class
+demo\web\LoginServlet.class
+demo\dto\UserDTO.class
+demo\rest\ApplicationConfig.class

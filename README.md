@@ -9,8 +9,8 @@
 Premièrement il faut avoir docker et docker-compose installé. En suite pour construire les images
 il faut aller dans le dossier ``AMT-2016-Discovery`` pui lancé la commande ``docker-compose up --build``. 
 Normalement docker devrait télécharger les dépendances et démarrer les images. Pour accèder au site
-web il faudra utiliser l'adresse ``http://192.168.99.100:9090/ServletTest-1.0-SNAPSHOT`` si vous utiliser
-docker toolbox ou ``http://localhost:9090/ServletTest-1.0-SNAPSHOT`` si votre OS possède docker nativement.
+web il faudra utiliser l'adresse ``http://192.168.99.100:9090/AMT-Projet-web/UsersManager`` si vous utiliser
+docker toolbox ou ``http://localhost:9090/AMT-Projet-web/UsersManager`` si votre OS possède docker nativement.
 
 Un compte par défaut est créer pour vous logger sur le site :
 username : *admin*  
