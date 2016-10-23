@@ -1,8 +1,6 @@
 package demo.web;
-
 import demo.model.User;
 import demo.services.UsersManager;
-
 import java.io.IOException;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;

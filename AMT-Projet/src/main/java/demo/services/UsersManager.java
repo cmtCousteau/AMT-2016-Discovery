@@ -22,7 +22,7 @@ public class UsersManager {
      * Permet d'ajouter un utilisateur dans la base de données.
      * 
      * @param user
-     * @return
+     * @return true/false en fonction de la réussite de l'opération.
      */
     public boolean addUser(User user){
         try{
