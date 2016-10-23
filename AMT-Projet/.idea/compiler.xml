@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ServletTest" />
+        <module name="AMT-Projet" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ServletTest" target="1.8" />
+      <module name="AMT-Projet" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

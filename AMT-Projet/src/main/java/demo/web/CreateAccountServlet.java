@@ -101,7 +101,12 @@ public class CreateAccountServlet extends HttpServlet {
             usersManager.addUser(new User(userName, password, first_name, last_name, email));
             request.setAttribute(("OK"), "La creation de compte c'est bien effectuée");
         }
-        request.setAttribute(("first_name"),first_name);
+        else {
+            request.setAttribute(("first_name"), first_name);
+            request.setAttribute(("last_name"), last_name);
+            request.setAttribute(("userName"),userName);
+            request.setAttribute(("email"),email);
+        }
         request.getRequestDispatcher("WEB-INF/pages/CreateAccount.jsp").forward(request, response);
     }
 }
