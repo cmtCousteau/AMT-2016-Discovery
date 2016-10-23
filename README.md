@@ -3,6 +3,15 @@
 
 ## Description du projet
 
+Le but de ce projet est à déployer une application web java respectant la spécification
+Java EE.   
+Nous allons devoir déployer un serveur web (Wildfly dans notre cas) sur lequel
+nous allons déployer un site web permettant à des utilisateurs de s'enregistrer et de
+s'authentifier.  
+Ces utilisateurs seront stockés dans une base de données MySQL. Notre site web mettra
+également à disposition une api REST permettant d'effectuer les opérations du CRUD.  
+Tous ceci sera déployer à l'intérieur de containers docker.
+
 
 ## utilisation
 
