@@ -10,15 +10,15 @@ nous allons déployer un site web permettant à des utilisateurs de s'enregistre
 s'authentifier.  
 Ces utilisateurs seront stockés dans une base de données MySQL. Notre site web mettra
 également à disposition une api REST permettant d'effectuer les opérations du CRUD.  
-Tous ceci sera déployer à l'intérieur de containers docker.
+Tous ceci sera déployé à l'intérieur de containers docker.
 
 
 ## utilisation
 
 Premièrement il faut avoir docker et docker-compose installé. En suite pour construire les images
-il faut aller dans le dossier ``AMT-2016-Discovery`` pui lancé la commande ``docker-compose up --build``. 
+il faut aller dans le dossier ``AMT-2016-Discovery`` puis lancer la commande ``docker-compose up --build``. 
 Normalement docker devrait télécharger les dépendances et démarrer les images. Pour accèder au site
-web il faudra utiliser l'adresse si vous utiliser docker toolbox : ``http://192.168.99.100:9090/AMT-Projet-web/UsersManager``  
+web il faudra utiliser l'adresse suivante si vous utiliser docker toolbox : ``http://192.168.99.100:9090/AMT-Projet-web/UsersManager``  
 ou si votre OS possède docker nativement: ``http://localhost:9090/AMT-Projet-web/UsersManager``
 
 Un compte par défaut est créé pour vous logger sur le site :
@@ -37,7 +37,7 @@ pouvoir accèder à cette page).
 ![Screenshot](doc/diagramme.png)
 
 ####Remarques sur le fonctionnement
-On peut voir que nos servlets, ainsi que notre api REST font appellent au"userManager", celui-ci se charge de gérer les UserDTO qui font le lien
+On peut voir que nos servlets, ainsi que notre api REST font appellent au "userManager", celui-ci se charge de gérer les UserDTO qui font le lien
 avec les User. Le "userManager" se charge également de faire les requêtes SQL sur la base de données.
 
 
@@ -66,11 +66,11 @@ et ensuite l'attribuer au nouvel objet DTO contenant l'utilisateur récément cr
 * La méthode *PUT* du CRUD ne vérifie pas si le nouveau username n'est pas déjà utilisé, on peut donc se retrouver avec 2 personnes avec le même username.
 
 ## Test de l'api REST avec postman
-Un script postman contenant les différentes requêtes de tests sera fourni dans le dossier "Postman". Il vous suffira
-de changer les variables de l'url (pour accèder à l'api REST) et la variable de l'id pour choisir quel utilisateur sélectionner
-suivant la requête.
+Un script postman contenant les différentes requêtes de tests est fourni dans le dossier "Postman", il est accompagné d'un script contenant les variables. Il vous suffira
+de changer la variable ``url`` pour définir la bonne url pour accèder à l'api REST et la variable ``id`` pour choisir quel utilisateur sélectionner pour
+la requête choisie.
 
-## Problème connues
+## Problème connus
 Nous avons rencontré un petit problème, en effet dans la class "UsersManager.java" nous devons avoir une configuration différentes pour la "dataSource".
 Nous devons altérner entre ``java:/jdbc/amtdb`` et ``java:/amtdb`` sans quoi ça ne marche pas sur l'une ou l'autre de nos configuration. La version
 avec ``java:/jdbc/amtdb`` semble fonctionner sur le server wildfly démmaré dans docker, donc on c'est cette version qui sera fournie.
