@@ -35,17 +35,17 @@
                 <c:if test="${error != null && OK == null}">
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <strong>Warning!</strong> ${error} ${PasswordNotSimilar}
+                        <strong>Warning!</strong> ${error} ${PasswordNotSimilar} ${badUserName} ${badPassword} ${badEmail} ${UserNameAlreadyUsed}
                     </div>
                 </c:if>
 
 
             <form method="post" action="CreateAccount">
                 <p>
-                    <c:if test="${first_name != null}">
+                    <c:if test="${first_name != null && erro != null}">
                         <input type="text" name="firt_name" placeholder="name" id="first_name" value="${first_name}"/>
                     </c:if>
-                    <c:if test="${first_name == null}">
+                    <c:if test="${first_name == null || erro == null}">
                         <input type="text" name="first_name" placeholder="name" id="first_name" />
                     </c:if>
                     <input type="text" name="last_name" placeholder="lastname" id="last_name" />

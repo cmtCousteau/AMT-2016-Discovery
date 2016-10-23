@@ -59,7 +59,7 @@ public class CreateAccountServlet extends HttpServlet {
         String badUserName = "le nom d'utilisateur est trop court <p>";
         String badPassword = "le mot de passe est trop court <p>";
         String badEmail = "L'email n'est pas correct <p>";
-        String UserNameAlreadyUsed = "l'email est deja utilisé <p>";
+        String UserNameAlreadyUsed = "le username est deja utilisé <p>";
 
        
         boolean isNotOk = false;

@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 @Stateless
 public class UsersManager {
     
-    @Resource(lookup = "java:/jdbc/amtdb")
+    @Resource(lookup = "java:/amtdb")
     private DataSource dataSource;
             
     /**
