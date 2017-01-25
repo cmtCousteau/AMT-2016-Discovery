@@ -36,8 +36,14 @@
                     </div>
                 </c:otherwise>
             </c:choose>
-
-
+            
+            
+            
+            <form method="post" action="doAGoodAction">
+                <input type="submit" name="login" class="login login-submit hvr-icon-float" value="good">
+            </form>
+            
+           
 
             <form method="post" action="Login">
                 <input type="text" name="userName" placeholder="Username">

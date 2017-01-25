@@ -2,8 +2,11 @@
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/LoginServlet.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/services/UsersManager.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/rest/UsersManagerRest.java
+/home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/doAGoodActionServlet.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/UsersManagerServlet.java
+/home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/goodKarma.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/sessionFilter.java
+/home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/web/giveSomeKarma.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/rest/ApplicationConfig.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/model/User.java
 /home/oem/Documents/3em/AMT/AMT-2016-Discovery/AMT-Projet/src/main/java/demo/dto/UserDTO.java

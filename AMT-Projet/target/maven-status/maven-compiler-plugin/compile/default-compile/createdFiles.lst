@@ -2,8 +2,11 @@ demo/dto/UserDTO.class
 demo/web/CreateAccountServlet.class
 demo/services/UsersManager.class
 demo/rest/UsersManagerRest.class
+demo/web/goodKarma.class
 demo/web/LoginServlet.class
+demo/web/giveSomeKarma.class
 demo/model/User.class
 demo/rest/ApplicationConfig.class
 demo/web/sessionFilter.class
+demo/web/doAGoodActionServlet.class
 demo/web/UsersManagerServlet.class

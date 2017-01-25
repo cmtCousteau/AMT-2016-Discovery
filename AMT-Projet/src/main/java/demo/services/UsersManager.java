@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 @Stateless
 public class UsersManager {
     
-    @Resource(lookup = "java:/jdbc/amtdb")
+    @Resource(lookup = "java:/amtdb")
     private DataSource dataSource;
             
     /**
@@ -113,7 +113,7 @@ public class UsersManager {
             PreparedStatement pstmt = connection.prepareStatement("SELECT * FROM users WHERE user_id = ?");
             pstmt.setInt(1, id); 
             ResultSet rs = pstmt.executeQuery();
-            
+            //TODO make my JDBC code generic
             if (rs.next() ) {
                 rs.first();
                 return new User(rs.getInt("user_id"),

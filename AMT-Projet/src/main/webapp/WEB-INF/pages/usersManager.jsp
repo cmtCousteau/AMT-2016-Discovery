@@ -19,7 +19,17 @@
     <jsp:include page="includes/topbar.jsp"/>
 </nav>
 <!-- /Zetta Menu -->
-<div class="container">
+<div class="container"> 
+    
+    <form method="post" action="goodKarma">
+           <input type="submit" name="login" class="login login-submit hvr-icon-float" value="create good karma">
+    </form>
+    
+    <form method="post" action="giveSomeKarma">
+           <input type="submit" name="login" class="login login-submit hvr-icon-float" value="give some good karma">
+    </form>
+    
+    
     <!-- /.box-header -->
     <div class="box-body">
 
@@ -74,10 +84,16 @@
     $(function () {
         $('#example2').DataTable({
             ajax: {
-                url: '/AMT-Projet-web/api/usersManagerTest',
-                dataSrc: ""
+                headers: { "Accept": "*/*",
+                            "token": "MyTest" },
+                url: 'http://localhost:8090/api/users',
+                dataSrc: "",
+                'type': 'GET',
+                'beforeSend': function (request) {
+                            request.setRequestHeader(token, "MyTest");
+                }
             },
-            columns: [ {data: "userName"}],
+            columns: [ {data: "id"}],
             "paging": true,
             "lengthChange": false,
             "searching": true,

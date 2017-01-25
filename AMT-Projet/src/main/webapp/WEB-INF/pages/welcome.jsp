@@ -19,8 +19,6 @@
     <jsp:include page="includes/topbar.jsp" />
 </nav>
 <div class="container">
-    Hello
-
     <div class="row">
         <ul class="gridder">
 

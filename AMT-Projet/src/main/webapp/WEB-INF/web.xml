@@ -21,6 +21,18 @@
         <servlet-name>UsersManagerServlet</servlet-name>
         <servlet-class>demo.web.UsersManagerServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>doAGoodActionServlet</servlet-name>
+        <servlet-class>demo.web.doAGoodActionServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>goodKarmaSevelet</servlet-name>
+        <servlet-class>demo.web.goodKarma</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>giveSomeKarmaServlet</servlet-name>
+        <servlet-class>demo.web.giveSomeKarma</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccount</servlet-name>
         <url-pattern>/CreateAccount</url-pattern>
@@ -32,6 +44,18 @@
     <servlet-mapping>
         <servlet-name>UsersManagerServlet</servlet-name>
         <url-pattern>/UsersManager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>doAGoodActionServlet</servlet-name>
+        <url-pattern>/doAGoodAction</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>goodKarmaSevelet</servlet-name>
+        <url-pattern>/goodKarma</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>giveSomeKarmaServlet</servlet-name>
+        <url-pattern>/giveSomeKarma</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
